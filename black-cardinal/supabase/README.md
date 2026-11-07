@@ -1,0 +1,1 @@
+Run the SQL migration in Supabase SQL Editor. Admin authentication must be configured manually in Supabase Auth. Do not enable public sign-up for an internal admin dashboard.
