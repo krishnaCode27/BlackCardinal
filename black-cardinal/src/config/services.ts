@@ -2,6 +2,7 @@ export type Service = {
   slug: string;
   title: string;
   short: string;
+  example: string;
   intro: string;
   outcomes: string[];
   offerings: string[];
@@ -13,71 +14,99 @@ export const services: Service[] = [
   {
     slug: "digital-marketing",
     title: "Digital Marketing",
-    short: "A connected strategy that brings your brand, channels and growth goals together.",
-    intro: "Build a clearer digital presence with coordinated campaigns, useful content and performance-led decisions. We start with your audience and business goals, then shape a plan around the channels that make sense.",
-    outcomes: ["A more consistent brand presence", "Clearer campaign measurement", "Better alignment between marketing activity and business goals"],
-    offerings: ["Digital strategy and channel planning", "Campaign planning and execution", "Audience and competitor research", "Analytics and performance reporting"],
-    process: ["Discover your goals and audience", "Build a focused channel strategy", "Launch, measure and learn", "Refine activity using real performance data"],
-    faqs: [{ question: "Do you guarantee leads or sales?", answer: "No responsible agency can guarantee a specific result. We agree on measurable objectives, track performance and improve the work based on evidence." }, { question: "Can you work with our existing team?", answer: "Yes. We can collaborate with your internal team, existing vendors or work as an external marketing partner." }]
+    short: "Plan online ads and content so more of the right people find your business.",
+    example: "For example, promote a new product on Instagram and track how many people ask about it.",
+    intro: "We help you choose where to reach customers online, what to say, and how to tell whether your marketing is working.",
+    outcomes: ["A clear marketing plan", "More consistent messages", "A simple view of clicks and enquiries"],
+    offerings: ["A practical online marketing plan", "Planning and running campaigns", "Research on customers and competitors", "Tracking clicks, calls and enquiries"],
+    process: ["Talk about your goals and customers", "Choose the right channels and messages", "Create and launch the campaign", "Review the results and improve the plan"],
+    faqs: [
+      { question: "Can you guarantee more sales?", answer: "No. Results depend on your market, budget and offer. We agree what to measure, track the work and make improvements based on what we learn." },
+      { question: "Can you work with our current team?", answer: "Yes. We can work alongside your team or other suppliers, or help manage the agreed work for you." },
+    ],
   },
   {
     slug: "social-media-marketing",
     title: "Social Media Marketing",
-    short: "Turn social channels into a consistent, recognizable part of your brand.",
-    intro: "Create a social presence with a clear point of view. We help plan content, shape creative direction, manage publishing and learn from audience response.",
-    outcomes: ["Consistent publishing and visual direction", "Content built around your audience", "Actionable channel insights"],
-    offerings: ["Social media strategy", "Content calendars and copywriting", "Creative direction and post design", "Community and performance reporting"],
-    process: ["Audit channels and audience", "Define content pillars and voice", "Plan and publish content", "Review insights and optimize"],
-    faqs: [{ question: "Which platforms do you manage?", answer: "Platform selection depends on your audience and goals. We can plan for Instagram, Facebook, LinkedIn and other relevant channels." }, { question: "Do you create the content?", answer: "We can support content planning, copy and creative production based on the agreed scope." }]
+    short: "Plan posts that help people notice, understand and follow your business.",
+    example: "For example, create a week of Instagram posts showing a new product, how it is made, and how to order it.",
+    intro: "We help you decide what to post, create clear captions and visuals, and keep your social pages active and on-brand.",
+    outcomes: ["A steady plan for posts", "A consistent look and voice", "A clearer view of what people respond to"],
+    offerings: ["A simple social media plan", "Post calendars and captions", "Post and story designs", "Help reviewing comments and results"],
+    process: ["Review your pages and audience", "Choose topics and a posting schedule", "Write and design the posts", "Review responses and adjust the plan"],
+    faqs: [
+      { question: "Which social media pages can you help with?", answer: "We can help with Instagram, Facebook, LinkedIn and other pages your customers use. We will choose based on your audience and goals." },
+      { question: "Do you make the posts too?", answer: "Yes. Depending on what we agree, we can plan topics, write captions and create post designs." },
+    ],
   },
   {
     slug: "seo",
     title: "Search Engine Optimization",
-    short: "Make it easier for the right people to discover your business through search.",
-    intro: "Improve your website's search foundations through technical checks, useful content and clear site structure. SEO is a long-term process built on relevance, quality and consistency.",
-    outcomes: ["A healthier technical foundation", "More useful search-focused content", "Better visibility into organic performance"],
-    offerings: ["Technical SEO audit", "Keyword and search intent research", "On-page optimization", "Content and local SEO recommendations"],
-    process: ["Audit the current website", "Prioritize technical and content opportunities", "Implement agreed improvements", "Monitor visibility and refine"],
-    faqs: [{ question: "How long does SEO take?", answer: "SEO timelines vary by competition, website condition and scope. Meaningful progress typically takes months rather than days." }, { question: "Can you promise the number one ranking?", answer: "No. Search rankings are controlled by search engines, so guaranteed positions would be misleading." }]
+    short: "Help your website show up when people search online for what you offer.",
+    example: "For example, help a bakery appear when someone searches for “fresh cakes in Indore.”",
+    intro: "We check your website, improve its pages and make it easier for search engines and people to understand what you offer. SEO takes time, so we track progress and keep improving.",
+    outcomes: ["A healthier, easier-to-use website", "Pages that answer customer questions", "A clearer view of search visits and enquiries"],
+    offerings: ["A check of website health and speed", "Research into what customers search for", "Clearer page titles and content", "Suggestions for local search pages"],
+    process: ["Check your website and search presence", "Find the most useful improvements", "Make or guide the agreed changes", "Track search visits and refine the work"],
+    faqs: [
+      { question: "How long does SEO take?", answer: "It usually takes months, not days. The timeline depends on your website, your competitors and the amount of work needed." },
+      { question: "Can you promise the first spot on Google?", answer: "No. Google decides search positions, so nobody can honestly promise a specific ranking." },
+    ],
   },
   {
     slug: "website-development",
     title: "Website Development",
-    short: "Fast, responsive websites designed to make your next step obvious.",
-    intro: "Your website should explain what you do, build confidence and help visitors take action. We focus on thoughtful structure, responsive layouts, accessibility and maintainable implementation.",
-    outcomes: ["A clear user journey", "Responsive experiences across devices", "A maintainable technical foundation"],
-    offerings: ["Website strategy and information architecture", "UI design and development", "Landing pages and conversion paths", "Performance and technical SEO foundations"],
-    process: ["Understand the audience and requirements", "Plan pages and user journeys", "Design and develop", "Test, launch and support"],
-    faqs: [{ question: "Can you redesign an existing website?", answer: "Yes. We can review the existing site and plan a redesign that preserves useful content and improves the experience." }, { question: "Will the website work on mobile?", answer: "Responsive behavior is part of the development and testing process." }]
+    short: "Build a fast, easy-to-use website that works well on phones and computers.",
+    example: "For example, make a booking website where visitors can see your services, choose a time and send a request.",
+    intro: "We plan and build websites that explain what you do and make the next step clear, such as calling, booking or asking for a quote.",
+    outcomes: ["Pages that are easy to follow", "A site that adapts to mobile screens", "Simple ways for visitors to contact you"],
+    offerings: ["Planning the pages and menu", "Designing and building the website", "Landing pages for products or campaigns", "Making the site faster and easier to use"],
+    process: ["Learn about your business and visitors", "Plan the pages and what they should do", "Design and build the website", "Check it on phones and computers before launch"],
+    faqs: [
+      { question: "Can you improve my current website?", answer: "Yes. We can review what you have and plan updates or a full redesign." },
+      { question: "Will the website work on phones?", answer: "Yes. We design and check the site on phone, tablet and desktop screen sizes." },
+    ],
   },
   {
     slug: "branding-graphic-design",
     title: "Branding & Graphic Design",
-    short: "Build a recognizable identity with a consistent visual language.",
-    intro: "Strong branding helps people recognize and understand your business. We develop practical visual systems that can work across digital channels and everyday brand touchpoints.",
-    outcomes: ["A more coherent visual identity", "Reusable brand assets", "Consistent creative across channels"],
-    offerings: ["Brand direction and visual identity", "Logo refinement and brand assets", "Social media and campaign creatives", "Marketing collateral design"],
-    process: ["Discover positioning and audience", "Explore visual directions", "Develop and refine the identity", "Prepare usable brand assets"],
-    faqs: [{ question: "Can you work with an existing logo?", answer: "Yes. We can build supporting design elements and templates around an existing identity." }, { question: "Do you provide source files?", answer: "Deliverables and editable source files are agreed as part of the project scope." }]
+    short: "Give your business a clear look that people can recognize and remember.",
+    example: "For example, create a logo, colors and social media templates that all feel like the same brand.",
+    intro: "We help shape how your business looks, from its logo and colors to the designs people see on social media and in marketing.",
+    outcomes: ["A look people can recognize", "Matching designs across your channels", "Reusable files for future marketing"],
+    offerings: ["Choosing your brand look and colors", "Creating or improving a logo", "Designing social posts and ads", "Preparing print and digital materials"],
+    process: ["Learn what your business stands for", "Explore a few visual directions", "Choose and refine a direction", "Prepare the finished files for use"],
+    faqs: [
+      { question: "Can you work with my current logo?", answer: "Yes. We can keep your logo and create matching colors, layouts and templates around it." },
+      { question: "Will I get files I can use later?", answer: "Yes. We agree on the file types you need and prepare the final files for those uses." },
+    ],
   },
   {
     slug: "google-business-profile",
     title: "Google Business Profile",
-    short: "Help local customers find accurate, useful information about your business.",
-    intro: "A well-maintained Google Business Profile supports local discovery and customer confidence. We help organize profile information and improve its completeness and consistency.",
-    outcomes: ["More complete business information", "Consistent local presence", "A clearer process for profile updates"],
-    offerings: ["Profile setup or audit", "Business information optimization", "Category and service review", "Posts, photos and review response guidance"],
-    process: ["Review profile and business details", "Identify missing or inconsistent information", "Implement approved updates", "Monitor profile health and insights"],
-    faqs: [{ question: "Do you need access to our Google account?", answer: "Authorized profile access is needed for direct management. Access should be granted through Google's official permissions." }, { question: "Can you guarantee a map ranking?", answer: "No. Local rankings depend on several factors and cannot be guaranteed." }]
+    short: "Keep your business details clear and up to date on Google Search and Maps.",
+    example: "For example, update a salon’s opening hours, phone number, location, photos and list of services.",
+    intro: "We help customers find the right information about your business on Google, including where you are, when you are open and what you offer.",
+    outcomes: ["Correct contact and opening details", "A more complete Google listing", "Useful photos and service information"],
+    offerings: ["Setting up or checking your profile", "Updating hours, address and phone number", "Adding services, photos and updates", "Guidance for replying to reviews"],
+    process: ["Check your current Google listing", "Find details that are missing or out of date", "Make the approved changes", "Review the listing and keep it current"],
+    faqs: [
+      { question: "Do you need access to my Google account?", answer: "Only if you want us to make changes. You can grant access through Google’s official account settings." },
+      { question: "Can you promise my business will appear first on Maps?", answer: "No. Google chooses map results using many factors, and no one can guarantee a position." },
+    ],
   },
   {
     slug: "nfc-google-review-solutions",
     title: "NFC Google Review Solutions",
-    short: "Make it simpler for customers to reach your review destination.",
-    intro: "NFC-enabled review touchpoints can reduce friction when a customer wants to leave feedback. We help businesses plan the customer journey and coordinate suitable NFC review products with an authorized supplier.",
-    outcomes: ["A simpler review handoff", "Consistent branded touchpoints", "A clearer customer feedback process"],
-    offerings: ["Review journey planning", "NFC card and stand coordination", "Branded artwork guidance", "Staff usage and review-request guidance"],
-    process: ["Confirm the correct business review destination", "Choose a suitable NFC format", "Prepare branding and instructions", "Test the customer journey before use"],
-    faqs: [{ question: "Can NFC guarantee more positive reviews?", answer: "No. NFC only makes the review destination easier to access. Reviews must reflect genuine customer experiences and must never be incentivized or filtered." }, { question: "Do customers need a special app?", answer: "Most modern NFC-enabled phones can open a web link without a separate app, but compatibility varies by device and settings." }]
-  }
+    short: "Let customers tap a card with their phone to open your Google review page.",
+    example: "For example, place a tap-to-review card at checkout so a customer can open your review link on their phone.",
+    intro: "We help set up a simple tap-to-open link for customers who choose to leave an honest review. We can help plan the link, card design and how your team uses it.",
+    outcomes: ["A quick way to open your review page", "A branded card or counter stand", "Clear instructions for your team"],
+    offerings: ["Finding the right Google review link", "Planning an NFC card or stand", "Preparing the card design", "Showing your team how to use it"],
+    process: ["Confirm your business review link", "Choose a card or stand", "Prepare and check the design", "Test it with a phone before use"],
+    faqs: [
+      { question: "Will this guarantee more or better reviews?", answer: "No. It only makes your review page easier to open. Reviews should be honest and must not be paid for or filtered." },
+      { question: "Do customers need an app?", answer: "Most newer phones can open the link when tapped. Older phones may need their camera or NFC setting enabled." },
+    ],
+  },
 ];

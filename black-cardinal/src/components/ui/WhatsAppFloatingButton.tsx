@@ -73,6 +73,7 @@ export function WhatsAppFloatingButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [isContactSectionVisible, setIsContactSectionVisible] = useState(false);
   const [currentPath, setCurrentPath] = useState(pathname);
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -86,6 +87,18 @@ export function WhatsAppFloatingButton() {
       { threshold: 0 },
     );
     observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const contactSection = document.querySelector("#contact-form");
+    if (!contactSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsContactSectionVisible(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(contactSection);
     return () => observer.disconnect();
   }, []);
 
@@ -141,7 +154,7 @@ export function WhatsAppFloatingButton() {
   return (
     <div
       ref={containerRef}
-      className={`wa-float-container${isFooterVisible ? " is-footer-visible" : ""}`}
+      className={`wa-float-container${isFooterVisible ? " is-footer-visible" : ""}${isContactSectionVisible ? " is-contact-section-visible" : ""}`}
       aria-label="WhatsApp Contact Widget"
     >
       {/* ── DESKTOP TOOLTIP ── */}

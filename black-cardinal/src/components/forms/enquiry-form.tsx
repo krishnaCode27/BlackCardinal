@@ -52,8 +52,10 @@ export function EnquiryForm({ initialService = "" }: { initialService?: string }
       </div>
       <label>Preferred contact method<select name="contactMethod" defaultValue="Email"><option>Email</option><option>Phone</option><option>WhatsApp</option></select></label>
       <label>Tell us about your project<textarea name="message" required minLength={10} maxLength={3000} rows={5} placeholder="What are you looking to achieve?" /></label>
-      <button className="button" disabled={busy}>{busy ? "Sending..." : "Send enquiry"} <span>↗</span></button>
-      <p className="form-status" aria-live="polite">{status}</p>
+      <button className="button" disabled={busy} aria-busy={busy}>
+        {busy ? "Sending…" : "Send enquiry"} <span aria-hidden="true">↗</span>
+      </button>
+      <p className="form-status" role="status" aria-live="polite">{status}</p>
       <p className="fine-print">Your information is used only to respond to your enquiry.</p>
     </form>
   );

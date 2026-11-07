@@ -30,50 +30,43 @@ const SERVICE_META = [
     icon: TrendingUp,
     num: "01",
     title: "Digital Marketing",
-    desc: "Strategic digital campaigns designed to strengthen your online presence and connect your brand with the right audience.",
-    highlights: ["Digital strategy", "Campaign planning", "Audience targeting", "Performance insights"],
+    highlights: ["Marketing plan", "Online campaigns", "Customer research", "Results tracking"],
   },
   {
     icon: Share2,
     num: "02",
     title: "Social Media Marketing",
-    desc: "Build a consistent social presence with thoughtful content, creative direction and meaningful audience engagement.",
-    highlights: ["Social media strategy", "Content planning", "Creative posts", "Audience engagement"],
+    highlights: ["Post planning", "Captions and visuals", "Page updates", "Results checks"],
   },
   {
     icon: Search,
     num: "03",
     title: "Search Engine Optimization",
-    desc: "Improve your website's search visibility through structured optimization and useful, search-focused content.",
-    highlights: ["SEO audits", "On-page SEO", "Technical SEO", "Keyword research"],
+    highlights: ["Website health", "Page improvements", "Search terms", "Local search"],
   },
   {
     icon: Code,
     num: "04",
     title: "Website Development",
-    desc: "Create a modern, responsive digital experience that communicates your brand and makes it easy for visitors to connect.",
-    highlights: ["Responsive websites", "UI/UX design", "Next.js development", "Performance optimization"],
+    highlights: ["Mobile-friendly site", "Page design", "Online forms", "Site speed"],
   },
   {
     icon: Palette,
     num: "05",
     title: "Branding & Graphic Design",
-    desc: "Build a recognizable visual identity through thoughtful design, consistent branding and creative communication.",
-    highlights: ["Brand identity", "Logo design", "Graphic design", "Brand assets"],
+    highlights: ["Logo and colors", "Brand style", "Social graphics", "Marketing materials"],
   },
   {
     icon: MapPin,
     num: "06",
     title: "Google Business Profile",
-    desc: "Help customers discover your business more easily through an accurate and well-presented Google Business Profile.",
-    highlights: ["Profile setup", "Business info optimization", "Photo & content guidance", "Profile maintenance"],
+    highlights: ["Google Maps listing", "Hours and details", "Photos and updates", "Review replies"],
   },
   {
     icon: Smartphone,
     num: "07",
     title: "NFC Google Review Solutions",
-    desc: "Make it easier for customers to access your review destination with convenient NFC-enabled review experiences.",
-    highlights: ["NFC review solutions", "Review destination setup", "Tap-to-access experience", "Business review guidance"],
+    highlights: ["Tap-to-review card", "Google review link", "Branded design", "Setup guidance"],
   },
 ];
 
@@ -81,45 +74,45 @@ const PROCESS_STEPS = [
   {
     num: "01",
     name: "Discover",
-    desc: "Understand the business, audience and objectives.",
+    desc: "Talk about your business, your customers and what you want to achieve.",
   },
   {
     num: "02",
     name: "Strategize",
-    desc: "Define a thoughtful direction and practical plan.",
+    desc: "Choose the work that will best support your goal.",
   },
   {
     num: "03",
     name: "Create",
-    desc: "Turn the strategy into creative digital solutions.",
+    desc: "Create the posts, pages or campaigns in the plan.",
   },
   {
     num: "04",
     name: "Refine",
-    desc: "Review the work and improve the experience.",
+    desc: "Check what is working and make useful changes.",
   },
 ];
 
 const WHY_FEATURES = [
   {
     icon: Compass,
-    title: "Strategy-led thinking",
-    desc: "Every project starts with a clear understanding of your business goals and audience before any creative work begins.",
+    title: "Start with a clear plan",
+    desc: "We first learn what your business does and who you want to reach.",
   },
   {
     icon: Lightbulb,
-    title: "Creative execution",
-    desc: "Distinctive ideas and thoughtful design that help your brand stand out in a competitive digital space.",
+    title: "Designs with purpose",
+    desc: "We create clear designs and messages that fit your business.",
   },
   {
     icon: Layers,
-    title: "Connected digital services",
-    desc: "Integrated capabilities across strategy, design, development and marketing that work together seamlessly.",
+    title: "Services that work together",
+    desc: "Your website, social pages and marketing can support the same goals.",
   },
   {
     icon: Users,
-    title: "Direct collaboration",
-    desc: "Work directly with the people building your project, with transparent communication at every stage.",
+    title: "Work with our team directly",
+    desc: "You can speak directly with the people doing the work and get clear updates.",
   },
 ];
 
@@ -157,7 +150,7 @@ export function ServicesPageClient({ services }: ServicesPageClientProps) {
             transition={{ duration: 0.65, ease: EASE, delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] mb-6 max-w-[1040px] mx-auto"
           >
-            Digital Solutions. Creative Thinking.{" "}
+            Clear Help for Your Business.{" "}
             <span className="bg-gradient-to-r from-[#E32636] to-[#FF4D5E] bg-clip-text text-transparent">
               Meaningful Growth.
             </span>
@@ -170,7 +163,7 @@ export function ServicesPageClient({ services }: ServicesPageClientProps) {
             transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
             className="text-[#A5A5A5] text-base md:text-lg lg:text-xl max-w-[760px] mx-auto leading-relaxed mb-10"
           >
-            We combine strategy, design and technology to help businesses build stronger brands, connect with their audiences and create a lasting digital presence.
+              Get more customers online with straightforward help for marketing, websites, design and Google.
           </motion.p>
 
           {/* Action buttons */}
@@ -230,7 +223,7 @@ export function ServicesPageClient({ services }: ServicesPageClientProps) {
               transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
               className="text-[#A5A5A5] text-[15px] md:text-base leading-relaxed"
             >
-              From building your digital identity to strengthening your online visibility, we bring essential digital services together under one roof.
+              Pick one service or combine a few. Each one is explained in plain language, with an example of how it can help.
             </motion.p>
           </div>
 
@@ -294,8 +287,11 @@ export function ServicesPageClient({ services }: ServicesPageClientProps) {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#A5A5A5] text-[14px] leading-relaxed mb-6">
-                      {meta.desc}
+                    <p className="text-[#A5A5A5] text-[14px] leading-relaxed mb-3">
+                      {serviceData?.short}
+                    </p>
+                    <p className="text-[#DFDFDF]/75 text-[12.5px] leading-relaxed mb-6 border-l-2 border-[#E32636]/60 pl-3">
+                      <strong className="text-white">Example: </strong>{serviceData?.example}
                     </p>
 
                     {/* Key Highlights */}

@@ -70,8 +70,7 @@ export function ServicesSection() {
             <span className="services-title-accent">Needs to Grow.</span>
           </h2>
           <p className="services-subtitle">
-            A cohesive suite of strategic, creative, and digital services built to help your
-            business scale with authority.
+            Simple, practical help with marketing, design, websites and getting found online.
           </p>
         </div>
 
@@ -101,6 +100,7 @@ export function ServicesSection() {
 
                 <h3 className="svc-title">{service.title}</h3>
                 <p className="svc-desc">{service.short}</p>
+              <p className="svc-example"><strong>Example:</strong> {service.example}</p>
 
                 <div className="svc-tags">
                   {tags.map((tag) => (
