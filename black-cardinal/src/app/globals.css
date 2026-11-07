@@ -4183,6 +4183,15 @@ img {
   text-align: center;
   max-width: 680px;
   margin: 0 auto 56px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stats-header.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stats-header .section-label-wrap {
@@ -4221,16 +4230,28 @@ img {
   padding: 38px 30px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
               border-color 0.3s ease,
               box-shadow 0.3s ease;
   overflow: hidden;
 }
 
+.stat-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-card.is-complete {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 .stat-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(227, 38, 54, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(227, 38, 54, 0.08);
+  border-color: rgba(227, 38, 54, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65), 0 0 32px rgba(227, 38, 54, 0.12);
 }
 
 .stat-card-accent {
@@ -4263,23 +4284,31 @@ img {
   height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-dot.is-active {
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
 }
 
 .stat-value-wrap {
   margin-bottom: 14px;
   line-height: 1;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .stat-number-val {
   font-family: var(--font-display);
-  font-size: clamp(52px, 6vw, 76px);
+  font-size: clamp(54px, 6.2vw, 80px);
   font-weight: 800;
   letter-spacing: -2px;
   color: #FFFFFF;
   display: inline-block;
-  background: linear-gradient(180deg, #FFFFFF 30%, rgba(255, 255, 255, 0.65) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  will-change: transform, opacity, filter;
 }
 
 .stat-label {
@@ -4702,5 +4731,21 @@ img {
 
   .portfolio-card-body {
     padding: 22px 18px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-header,
+  .stat-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .stat-number-val {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
