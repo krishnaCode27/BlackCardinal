@@ -18,40 +18,40 @@ const BENTO_CARDS: BentoCardData[] = [
     title: "Strategy First",
     description:
       "Every meaningful digital presence starts with a clear strategy built around your business goals.",
-    icon: <Search className="h-5 w-5 text-[#E32636]" />,
-    itemClass: "bento-item-1 md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+    icon: <Search className="h-5 w-5 text-[#E32636]" aria-hidden="true" />,
+    itemClass: "bento-item-1 md:col-span-6 lg:col-span-4",
   },
   {
     id: "creative-thinking",
     title: "Creative Thinking",
     description:
       "Distinctive ideas and thoughtful design that help your brand stand out.",
-    icon: <Sparkles className="h-5 w-5 text-[#E32636]" />,
-    itemClass: "bento-item-2 md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+    icon: <Sparkles className="h-5 w-5 text-[#E32636]" aria-hidden="true" />,
+    itemClass: "bento-item-2 md:col-span-6 lg:col-span-4",
   },
   {
     id: "reliable-collaboration",
     title: "Reliable Collaboration",
     description:
       "Transparent communication and a collaborative approach at every stage.",
-    icon: <Lock className="h-5 w-5 text-[#E32636]" />,
-    itemClass: "bento-item-3 md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+    icon: <Lock className="h-5 w-5 text-[#E32636]" aria-hidden="true" />,
+    itemClass: "bento-item-3 md:col-span-6 lg:col-span-4",
   },
   {
     id: "digital-expertise",
     title: "Digital Expertise",
     description:
       "Connected digital services designed to strengthen your brand online.",
-    icon: <Settings className="h-5 w-5 text-[#E32636]" />,
-    itemClass: "bento-item-4 md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
+    icon: <Settings className="h-5 w-5 text-[#E32636]" aria-hidden="true" />,
+    itemClass: "bento-item-4 md:col-span-6 lg:col-span-6",
   },
   {
     id: "built-for-growth",
     title: "Built for Growth",
     description:
       "Practical digital solutions focused on creating meaningful business opportunities.",
-    icon: <Box className="h-5 w-5 text-[#E32636]" />,
-    itemClass: "bento-item-5 md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
+    icon: <Box className="h-5 w-5 text-[#E32636]" aria-hidden="true" />,
+    itemClass: "bento-item-5 md:col-span-12 lg:col-span-6",
   },
 ];
 
@@ -64,8 +64,8 @@ interface GridItemProps {
 
 export function GridItem({ itemClass, icon, title, description }: GridItemProps) {
   return (
-    <li className={`min-h-[14rem] list-none ${itemClass}`}>
-      <div className="relative h-full rounded-2xl md:rounded-3xl border border-white/10 p-2 md:p-2.5 transition-all duration-300">
+    <li className={`list-none ${itemClass}`}>
+      <div className="group relative h-full min-h-[200px] md:min-h-[220px] lg:h-[245px] rounded-[20px] border border-white/10 p-[1.5px] transition-all duration-300">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -77,22 +77,21 @@ export function GridItem({ itemClass, icon, title, description }: GridItemProps)
           variant="default"
         />
 
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border border-white/5 bg-[#151515] p-6 md:p-7 transition-colors duration-300 hover:bg-[#1D1D20]">
-          <div className="relative flex flex-1 flex-col justify-between gap-4">
-            {/* Icon Bubble with Cardinal Red Glow */}
-            <div className="w-fit rounded-lg border border-white/10 bg-[#1D1D20] p-2.5 shadow-inner">
-              {icon}
-            </div>
+        {/* Card Body - Natural top-aligned content flow */}
+        <div className="relative flex h-full flex-col items-start gap-4 overflow-hidden rounded-[18px] border border-white/5 bg-[#151515] p-6 md:p-7 transition-colors duration-300 group-hover:bg-[#1D1D20]/90">
+          {/* Icon Badge */}
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#1D1D20] text-[#E32636] shadow-[0_0_14px_rgba(227,38,54,0.12)] transition-transform duration-300 group-hover:scale-105 group-hover:border-[#E32636]/40">
+            {icon}
+          </div>
 
-            {/* Typography */}
-            <div className="space-y-2.5">
-              <h3 className="font-display text-xl font-bold tracking-tight text-[#FFFFFF] md:text-2xl">
-                {title}
-              </h3>
-              <p className="font-body text-sm leading-relaxed text-[#A5A5A5] md:text-base">
-                {description}
-              </p>
-            </div>
+          {/* Typography */}
+          <div className="space-y-2">
+            <h3 className="font-display text-lg font-bold tracking-tight text-[#F5F5F5] md:text-xl transition-colors duration-200 group-hover:text-white">
+              {title}
+            </h3>
+            <p className="font-body text-sm leading-relaxed text-[#A5A5A5]">
+              {description}
+            </p>
           </div>
         </div>
       </div>
@@ -102,7 +101,7 @@ export function GridItem({ itemClass, icon, title, description }: GridItemProps)
 
 export function GlowingEffectDemo() {
   return (
-    <ul className="bento-grid grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 xl:max-h-[36rem] xl:grid-rows-2">
+    <ul className="bento-grid grid grid-cols-1 gap-5 md:grid-cols-12">
       {BENTO_CARDS.map((card) => (
         <GridItem
           key={card.id}
@@ -115,4 +114,3 @@ export function GlowingEffectDemo() {
     </ul>
   );
 }
-

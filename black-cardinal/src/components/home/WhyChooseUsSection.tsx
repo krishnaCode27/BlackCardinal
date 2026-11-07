@@ -23,7 +23,7 @@ export function WhyChooseUsSection() {
             transition={{ duration: 0.5, ease: EASE }}
           >
             <span className="section-label-bar" aria-hidden="true" />
-            <span className="section-label">THE BLACK CARDINAL ADVANTAGE</span>
+            <span className="section-label">WHY BLACK CARDINAL</span>
           </motion.div>
 
           <motion.h2
@@ -44,7 +44,7 @@ export function WhyChooseUsSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
           >
-            A thoughtful blend of strategy, creativity and technology that helps businesses
+            We bring strategy, creativity and technology together to help businesses
             build a stronger digital presence.
           </motion.p>
         </div>

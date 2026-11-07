@@ -30,19 +30,38 @@ export const GlowingEffect = memo(function GlowingEffect({
 }: GlowingEffectProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isReduced, setIsReduced] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setIsReduced(mediaQuery.matches);
-    const handler = (e: MediaQueryListEvent) => setIsReduced(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
+    const mediaQueryMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mediaQueryTouch = window.matchMedia("(hover: none) and (pointer: coarse)");
+
+    setIsReduced(mediaQueryMotion.matches);
+    setIsTouch(mediaQueryTouch.matches);
+
+    const motionHandler = (e: MediaQueryListEvent) => setIsReduced(e.matches);
+    const touchHandler = (e: MediaQueryListEvent) => setIsTouch(e.matches);
+
+    mediaQueryMotion.addEventListener("change", motionHandler);
+    mediaQueryTouch.addEventListener("change", touchHandler);
+
+    return () => {
+      mediaQueryMotion.removeEventListener("change", motionHandler);
+      mediaQueryTouch.removeEventListener("change", touchHandler);
+    };
   }, []);
 
   useEffect(() => {
     if (disabled || isReduced) return;
     const container = containerRef.current;
     if (!container) return;
+
+    if (isTouch) {
+      // Touch devices: provide a subtle, static border accent without RAF or pointer tracking
+      container.style.setProperty("--active", glow ? "0.35" : "0");
+      container.style.setProperty("--start", "120");
+      return;
+    }
 
     const parent = container.parentElement;
     if (!parent) return;
@@ -113,7 +132,7 @@ export const GlowingEffect = memo(function GlowingEffect({
       parent.removeEventListener("pointerleave", handlePointerLeave);
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [disabled, isReduced, proximity, inactiveZone, glow]);
+  }, [disabled, isReduced, isTouch, proximity, inactiveZone, glow]);
 
   if (disabled) return null;
 
