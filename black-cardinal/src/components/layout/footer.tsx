@@ -32,7 +32,7 @@ export function Footer() {
           <div className="footer-founder-credit">
             <span className="footer-founder-badge">FOUNDERS</span>
             <span className="footer-founder-names">
-              Founded by Krishna Gupta &amp; Prem Gupta.
+              Founded by Krishna Gupta &amp; Prem Gupta
             </span>
           </div>
         </div>
@@ -94,7 +94,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Black Cardinal. All rights reserved.
           </span>
           <span className="footer-bottom-sep">/</span>
-          <span>Founded by Krishna Gupta &amp; Prem Gupta.</span>
+          <span>Founded by Krishna Gupta &amp; Prem Gupta</span>
         </div>
         <span className="footer-tagline">Built for ambitious brands.</span>
       </div>

@@ -13,34 +13,36 @@ const faqs: FaqItem[] = [
   {
     question: "What services does Black Cardinal provide?",
     answer:
-      "We offer a connected range of digital marketing services including Digital Marketing Strategy, Social Media Marketing, SEO, Website Development, Branding & Graphic Design, Google Business Profile management, and NFC Google Review Solutions. Each service can be engaged individually or as part of a broader program.",
+      "Black Cardinal provides an interconnected suite of 7 digital agency services: Digital Marketing Strategy, Social Media Marketing, Search Engine Optimization (SEO), Website Development, Branding & Graphic Design, Google Business Profile management, and NFC Google Review Solutions. Each service is tailored to deliver purposeful, long-term brand impact.",
   },
   {
-    question: "How does your process work?",
+    question: "How can I start working with Black Cardinal?",
     answer:
-      "We follow a four-stage process: Discover (understanding your business and audience), Strategize (developing a clear direction), Create (building the brand experience and campaigns), and Grow (measuring performance and improving the approach). We collaborate closely with you at every stage.",
+      "Starting is simple: submit an inquiry through our Contact page or message our co-founders directly on WhatsApp. We begin with a brief discovery conversation to understand your business objectives, target audience, and current challenges before proposing a structured strategy.",
+  },
+  {
+    question: "Does Black Cardinal provide website development?",
+    answer:
+      "Yes. We design and build modern, high-speed, fully responsive websites using modern frontend technologies like Next.js, React, and Tailwind CSS. Every website we create focuses on intuitive information architecture, accessibility, fast Core Web Vitals, and conversion pathways.",
   },
   {
     question: "Can I choose individual services?",
     answer:
-      "Yes. You can engage any individual service based on your current needs and priorities. We'll help you understand which services might work best together for your specific situation.",
+      "Absolutely. While our services work synergistically as an integrated growth ecosystem, you can engage us for individual services—such as website development, SEO optimization, or branding—based on your immediate priorities and budget.",
   },
   {
-    question: "Do you work with small businesses?",
+    question: "How can I discuss my project?",
     answer:
-      "Yes. We work with businesses across different sizes and stages. What matters most is your commitment to building a stronger digital presence, not the size of your business.",
+      "You can discuss your project through a scheduled introductory call, via email, or directly via WhatsApp with our co-founders Krishna Gupta or Prem Gupta. We review your requirements and provide realistic recommendations with complete transparency.",
   },
   {
-    question: "How can I start a project?",
+    question: "How can I contact the team?",
     answer:
-      "The best way to start is with a conversation. Use the enquiry form on our Contact page or send us an email. We'll ask a few questions about your goals and find out how we might help.",
-  },
-  {
-    question: "How do I contact your team?",
-    answer:
-      "You can reach us by email at the address listed in our Contact page. We'll respond using your preferred contact method.",
+      "You can reach our team directly using the floating WhatsApp button at the bottom-right of the screen (+91 70674 92239 or +91 877 095 7964), by emailing hello@yourdomain.com, or by filling out the project questionnaire on our Contact page.",
   },
 ];
+
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -50,30 +52,42 @@ export function FaqSection() {
   }
 
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq" aria-labelledby="faq-heading">
       <div className="faq-inner">
-        <div className="section-header">
-          <span className="section-eyebrow">FAQ</span>
-          <h2 className="section-title">Common Questions</h2>
+        <div className="faq-hd">
+          <div className="section-label-wrap">
+            <span className="section-label-bar" aria-hidden="true" />
+            <span className="section-label">CLARITY &amp; TRANSPARENCY</span>
+          </div>
+          <h2 className="faq-title" id="faq-heading">
+            Frequently Asked <span className="text-accent-red">Questions.</span>
+          </h2>
+          <p className="faq-subtitle">
+            Everything you need to know about partnering with Black Cardinal, our services,
+            and our collaborative approach.
+          </p>
         </div>
 
         <div className="faq-list">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div key={index} className="faq-item">
+              <div key={index} className={`faq-item${isOpen ? " is-open" : ""}`}>
                 <button
+                  type="button"
                   className="faq-trigger"
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                   id={`faq-trigger-${index}`}
                 >
-                  <span>{faq.question}</span>
-                  <ChevronDown
-                    size={20}
-                    className={`faq-arrow${isOpen ? " open" : ""}`}
-                  />
+                  <span className="faq-question-text">{faq.question}</span>
+                  <span className="faq-icon-bubble" aria-hidden="true">
+                    <ChevronDown
+                      size={18}
+                      className={`faq-arrow${isOpen ? " open" : ""}`}
+                    />
+                  </span>
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -86,7 +100,7 @@ export function FaqSection() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.32, ease: EASE }}
                     >
                       <div className="faq-answer-inner">{faq.answer}</div>
                     </motion.div>

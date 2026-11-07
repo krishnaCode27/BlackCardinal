@@ -35,29 +35,35 @@ function WhatsAppIcon({
 }
 
 const PREFILLED_MESSAGE =
-  "Hello Black Cardinal! I would like to connect with your team and discuss your digital marketing services. Please share more details.";
+  "Hello Black Cardinal! I would like to connect with your team and discuss your digital marketing services.";
 
 export interface WhatsAppContact {
   id: string;
-  label: string;
+  name: string;
+  designation: string;
   display: string;
   number: string;
+  ctaText: string;
   url: string;
 }
 
 export const WHATSAPP_CONTACTS: WhatsAppContact[] = [
   {
-    id: "whatsapp-1",
-    label: "WhatsApp 1",
+    id: "whatsapp-krishna",
+    name: "Krishna Gupta",
+    designation: "Co-Founder",
     display: "+91 70674 92239",
     number: "917067492239",
+    ctaText: "Chat with Krishna",
     url: `https://wa.me/917067492239?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
   },
   {
-    id: "whatsapp-2",
-    label: "WhatsApp 2",
-    display: "+91 87709 57964",
+    id: "whatsapp-prem",
+    name: "Prem Gupta",
+    designation: "Co-Founder",
+    display: "+91 877 095 7964",
     number: "918770957964",
+    ctaText: "Chat with Prem",
     url: `https://wa.me/918770957964?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
   },
 ];
@@ -113,7 +119,6 @@ export function WhatsAppFloatingButton() {
     }
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen, closePopup]);
-
 
   // Do not render on admin or authentication pages
   if (pathname?.startsWith("/admin")) {
@@ -185,7 +190,7 @@ export function WhatsAppFloatingButton() {
                 Let&apos;s Connect
               </h3>
               <p className="wa-popup-subtitle">
-                Choose a number to chat with our team.
+                Choose who you&apos;d like to connect with.
               </p>
             </div>
 
@@ -199,19 +204,22 @@ export function WhatsAppFloatingButton() {
                   rel="noopener noreferrer"
                   className="wa-contact-card"
                   onClick={closePopup}
-                  aria-label={`Chat on WhatsApp with ${contact.label} at ${contact.display}`}
+                  aria-label={`Chat on WhatsApp with ${contact.name} (${contact.designation}) at ${contact.display}`}
                 >
                   <div className="wa-contact-icon-wrap" aria-hidden="true">
                     <WhatsAppIcon size={20} />
                   </div>
 
                   <div className="wa-contact-info">
-                    <span className="wa-contact-label">{contact.label}</span>
+                    <div className="wa-contact-name-row">
+                      <span className="wa-contact-name">{contact.name}</span>
+                      <span className="wa-contact-designation">{contact.designation}</span>
+                    </div>
                     <span className="wa-contact-number">{contact.display}</span>
-                  </div>
-
-                  <div className="wa-contact-arrow" aria-hidden="true">
-                    <ArrowUpRight size={16} />
+                    <div className="wa-contact-cta-pill">
+                      <span>{contact.ctaText}</span>
+                      <ArrowUpRight size={13} />
+                    </div>
                   </div>
                 </a>
               ))}
@@ -221,14 +229,14 @@ export function WhatsAppFloatingButton() {
             <div className="wa-popup-footer">
               <span className="wa-popup-footer-dot" aria-hidden="true" />
               <p className="wa-popup-footer-text">
-                We&apos;d love to hear from you.
+                Direct founder access &bull; Response within hours
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── MAIN FLOATING WHATSAPP BUTTON ── */}
+      {/* ── MAIN FLOATING WHATSAPP BUTTON (BOTTOM RIGHT) ── */}
       <motion.button
         ref={buttonRef}
         type="button"
@@ -239,7 +247,7 @@ export function WhatsAppFloatingButton() {
         aria-label={
           isOpen
             ? "Close WhatsApp contact options"
-            : "Open WhatsApp contact options (+91 70674 92239 or +91 87709 57964)"
+            : "Open WhatsApp contact options (Krishna Gupta or Prem Gupta)"
         }
         aria-expanded={isOpen}
         aria-haspopup="dialog"

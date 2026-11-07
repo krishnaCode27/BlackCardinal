@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 const steps = [
   {
     num: "01",
-    title: "Discover",
-    desc: "We start by analyzing your business model, audience psychographics, and competitor landscape. Rigorous discovery and honest dialogue shape our baseline.",
+    title: "DISCOVER",
+    desc: "Understand the business, audience and objectives.",
   },
   {
     num: "02",
-    title: "Strategize",
-    desc: "With deep clarity in hand, we map out target channels, positioning, messaging hierarchy, and measurable growth benchmarks.",
+    title: "STRATEGIZE",
+    desc: "Build a practical strategy around the requirements.",
   },
   {
     num: "03",
-    title: "Create & Deploy",
-    desc: "Strategy turns into high-fidelity execution. We design brand identities, develop high-speed web experiences, and launch focused marketing campaigns.",
+    title: "CREATE",
+    desc: "Develop the creative and digital experience.",
   },
   {
     num: "04",
-    title: "Optimize & Scale",
-    desc: "We analyze performance signals, track customer journey data, and continuously optimize campaigns for compounding market returns.",
+    title: "GROW",
+    desc: "Improve, measure and refine the digital presence.",
   },
 ];
 
@@ -38,7 +38,7 @@ export function ProcessSection() {
             <span className="section-label">OUR PROCESS</span>
           </div>
           <h2 className="process-title" id="process-heading">
-            How We <span className="process-title-accent">Work.</span>
+            From Vision to <span className="process-title-accent">Digital Impact.</span>
           </h2>
           <p className="process-subtitle">
             A transparent, disciplined framework engineered around your business goals.

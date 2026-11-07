@@ -66,8 +66,8 @@ export function ServicesSection() {
             <span className="section-label">WHAT WE DO</span>
           </div>
           <h2 className="services-title" id="services-heading">
-            Digital Services.{" "}
-            <span className="services-title-accent">Real Results.</span>
+            Everything Your Brand{" "}
+            <span className="services-title-accent">Needs to Grow.</span>
           </h2>
           <p className="services-subtitle">
             A cohesive suite of strategic, creative, and digital services built to help your

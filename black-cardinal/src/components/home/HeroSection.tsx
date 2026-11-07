@@ -56,9 +56,9 @@ export function HeroSection() {
             animate="show"
             custom={0.34}
           >
-            We combine strategic clarity, creative branding, and advanced digital
-            technology to help businesses build commanding market presence and
-            meaningful customer growth.
+            We bring strategy, creativity and technology together to help businesses
+            build a stronger digital presence, connect with their audience and grow
+            with purpose.
           </motion.p>
 
           <motion.div
@@ -68,12 +68,12 @@ export function HeroSection() {
             animate="show"
             custom={0.48}
           >
-            <Link href="#services" className="btn-primary hero-btn-cta">
-              <span>Explore Our Services</span>
+            <Link href="/contact" className="btn-primary hero-btn-cta">
+              <span>Let&apos;s Talk</span>
               <ArrowUpRight size={17} strokeWidth={2.4} className="hero-btn-arrow" />
             </Link>
-            <Link href="/contact" className="btn-outline hero-btn-secondary">
-              <span>Start a Project</span>
+            <Link href="#services" className="btn-outline hero-btn-secondary">
+              <span>Explore Our Services</span>
               <ArrowUpRight size={16} strokeWidth={2} className="hero-btn-arrow" />
             </Link>
           </motion.div>

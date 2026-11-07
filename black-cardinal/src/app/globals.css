@@ -4159,3 +4159,548 @@ img {
     transition: none !important;
   }
 }
+
+
+/* ================================================================
+   BUSINESS STATISTICS SECTION (EXACT FIGURES: 1, 2, 1)
+   ================================================================ */
+
+.stats-section {
+  position: relative;
+  padding: 96px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.stats-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+
+.stats-header .section-label-wrap {
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.stats-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.2vw, 46px);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.stats-desc {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 38px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 38, 54, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(227, 38, 54, 0.08);
+}
+
+.stat-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: 0.6;
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.stat-order {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--red);
+}
+
+.stat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-value-wrap {
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.stat-number-val {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6vw, 76px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #FFFFFF;
+  display: inline-block;
+  background: linear-gradient(180deg, #FFFFFF 30%, rgba(255, 255, 255, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.stat-card-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ================================================================
+   WHY CHOOSE BLACK CARDINAL SECTION (4 STRATEGIC CARDS)
+   ================================================================ */
+
+.why-choose-section {
+  position: relative;
+  padding: 108px 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.why-choose-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.why-choose-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+
+.why-choose-header .section-label-wrap {
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.why-choose-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.why-choose-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.why-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 34px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 38, 54, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(227, 38, 54, 0.09);
+}
+
+.why-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.why-card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--red);
+}
+
+.why-card-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(227, 38, 54, 0.1);
+  border: 1px solid rgba(227, 38, 54, 0.25);
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.why-card:hover .why-card-icon-wrap {
+  background: var(--red);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.why-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.why-card-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* ================================================================
+   PORTFOLIO / SELECTED WORK SECTION
+   ================================================================ */
+
+.portfolio-section {
+  position: relative;
+  padding: 108px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.portfolio-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+
+.portfolio-header .section-label-wrap {
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.portfolio-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.portfolio-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portfolio-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 38, 54, 0.45);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7), 0 0 30px rgba(227, 38, 54, 0.09);
+}
+
+.portfolio-card--upcoming {
+  border-style: dashed;
+  border-color: rgba(227, 38, 54, 0.3);
+}
+
+.portfolio-card-frame {
+  position: relative;
+  height: 180px;
+  background: #111216;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-card-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.portfolio-card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(227, 38, 54, 0.12) 0%, transparent 70%);
+}
+
+.portfolio-card-center-icon {
+  position: relative;
+  z-index: 2;
+  color: var(--red);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-card-center-icon {
+  transform: scale(1.1);
+}
+
+.portfolio-badge-row {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+}
+
+.portfolio-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(8, 9, 11, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.portfolio-card--upcoming .portfolio-badge {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.portfolio-card-body {
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.portfolio-category {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.portfolio-card-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.portfolio-card-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.portfolio-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.portfolio-pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  padding: 3px 8px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #CCCCCC;
+}
+
+.portfolio-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+  margin-top: auto;
+}
+
+.portfolio-action-link:hover {
+  color: var(--red);
+  gap: 9px;
+}
+
+/* ================================================================
+   UPDATED WHATSAPP FOUNDER CARDS STYLES
+   ================================================================ */
+
+.wa-contact-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 1px;
+}
+
+.wa-contact-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.2px;
+}
+
+.wa-contact-designation {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.wa-contact-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: #25D366;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.wa-contact-card:hover .wa-contact-cta-pill {
+  color: #1EBE5D;
+  transform: translateX(2px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .stats-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    padding: 28px 20px;
+  }
+
+  .why-card {
+    padding: 26px 20px;
+  }
+
+  .portfolio-card-body {
+    padding: 22px 18px;
+  }
+}
