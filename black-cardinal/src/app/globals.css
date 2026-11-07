@@ -4749,3 +4749,42 @@ img {
     transition: none !important;
   }
 }
+
+
+/* ================================================================
+   ACETERNITY UI-INSPIRED GLOWING BENTO GRID
+   ================================================================ */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+  }
+  .bento-item-1 { grid-area: 1 / 1 / 2 / 7; }
+  .bento-item-2 { grid-area: 1 / 7 / 2 / 13; }
+  .bento-item-3 { grid-area: 2 / 1 / 3 / 7; }
+  .bento-item-4 { grid-area: 2 / 7 / 3 / 13; }
+  .bento-item-5 { grid-area: 3 / 1 / 4 / 13; }
+}
+
+@media (min-width: 1280px) {
+  .bento-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(250px, auto));
+    max-height: 38rem;
+  }
+  .bento-item-1 { grid-area: 1 / 1 / 2 / 5; }
+  .bento-item-2 { grid-area: 2 / 1 / 3 / 5; }
+  .bento-item-3 { grid-area: 1 / 5 / 3 / 8; }
+  .bento-item-4 { grid-area: 1 / 8 / 2 / 13; }
+  .bento-item-5 { grid-area: 2 / 8 / 3 / 13; }
+}
