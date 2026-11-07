@@ -4128,6 +4128,10 @@ h1, h2, h3, h4, h5, h6,
     display: none;
   }
 
+  .wa-float-container.is-home-hero-visible {
+    display: none;
+  }
+
   .wa-float-container {
     right: 16px;
     bottom: 20px;
@@ -5485,6 +5489,251 @@ a.contact-detail-card:hover {
 
   .service-detail-cta {
     transition-duration: 0.01ms;
+  }
+}
+
+/* ── SMALL-SCREEN POLISH ── */
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: auto;
+    padding: 112px 20px 56px;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: 520px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .hero-content-col {
+    order: 0;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-art-col {
+    order: 1;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .hero-art-wrap {
+    width: min(58vw, 220px);
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .art-meta-label {
+    bottom: -22px;
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 16px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+  }
+
+  .hero-headline {
+    max-width: 100%;
+    font-size: clamp(36px, 10vw, 46px);
+    line-height: 1.02;
+    letter-spacing: -1.8px;
+    text-wrap: balance;
+  }
+
+  .hero-body {
+    max-width: 40ch;
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: grid;
+    width: 100%;
+    max-width: 360px;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    min-height: 50px;
+    padding-inline: 18px;
+  }
+
+  .hero-badges-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px 12px;
+    margin-top: 24px;
+  }
+
+  .hero-badge-sep {
+    display: none;
+  }
+
+  .hero-badge-text {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  .trust-section,
+  .services-section,
+  .process-section,
+  .founders-section,
+  .portfolio-section,
+  .comparison-section,
+  .calculator-section,
+  .faq-section,
+  .about-story-section,
+  .about-principles-section,
+  .about-cta-section {
+    padding: 68px 20px;
+  }
+
+  .section-label-wrap {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .trust-heading,
+  .services-title,
+  .process-title,
+  .founders-title,
+  .about-story-heading,
+  .about-principles-title,
+  .about-cta-title {
+    max-width: 100%;
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    text-wrap: balance;
+  }
+
+  .services-hd {
+    margin-bottom: 32px;
+  }
+
+  .services-grid-new,
+  .why-choose-grid,
+  .portfolio-grid,
+  .calculator-inputs,
+  .results-grid,
+  .principles-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .svc-card,
+  .why-card,
+  .about-principle-card {
+    min-width: 0;
+    padding: 22px 20px;
+    border-radius: 14px;
+  }
+
+  .svc-title {
+    font-size: 18px;
+  }
+
+  .svc-desc {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .svc-example {
+    font-size: 12px;
+  }
+
+  .faq-item,
+  .faq-card,
+  .portfolio-card,
+  .comparison-col {
+    min-width: 0;
+  }
+
+  .faq-question,
+  .faq-trigger {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .about-hero-section {
+    padding: 126px 20px 64px;
+  }
+
+  .about-hero-title {
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -1.8px;
+    text-wrap: balance;
+  }
+
+  .about-hero-copy,
+  .about-story-text,
+  .about-principles-desc {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .contact-page-title,
+  .service-detail-hero h1 {
+    font-size: clamp(36px, 10vw, 48px);
+    letter-spacing: -1.7px;
+  }
+
+  .enquiry-form input,
+  .enquiry-form select,
+  .enquiry-form textarea {
+    font-size: 16px;
+  }
+
+  .service-detail-section h2,
+  .contact-intro h2 {
+    font-size: clamp(30px, 8vw, 38px);
+    letter-spacing: -1.3px;
+  }
+
+  .site-footer .footer-container,
+  #top > .footer-container {
+    padding-inline: 20px;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bird-img,
+  .hero-art-wrap,
+  .hero-bg-glow,
+  .art-core-glow,
+  .art-orbit,
+  .scroll-line-v {
+    animation: none !important;
   }
 }
 
