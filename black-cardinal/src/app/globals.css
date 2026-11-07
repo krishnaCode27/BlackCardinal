@@ -3757,3 +3757,405 @@ img {
     display: none;
   }
 }
+
+
+/* ================================================================
+   PREMIUM FLOATING WHATSAPP CONTACT SYSTEM
+   ================================================================ */
+
+.wa-float-container {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  right: calc(28px + env(safe-area-inset-right, 0px));
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  left: auto;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── MAIN FLOATING BUTTON ── */
+
+.wa-float-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.25s ease,
+              box-shadow 0.3s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wa-float-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 34px rgba(37, 211, 102, 0.58), 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.wa-float-btn.is-active {
+  background: #1EBE5D;
+  box-shadow: 0 10px 30px rgba(30, 190, 93, 0.5);
+}
+
+.wa-float-btn:focus-visible {
+  box-shadow: 0 0 0 3px #08090B, 0 0 0 6px #25D366, 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+.wa-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.65);
+  pointer-events: none;
+  animation: waPulseRing 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes waPulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+  65% {
+    transform: scale(1.44);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.44);
+    opacity: 0;
+  }
+}
+
+.wa-btn-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.35) 0%, transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.wa-btn-icon-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.wa-float-btn:hover .wa-main-icon {
+  transform: scale(1.04);
+}
+
+/* ── DESKTOP TOOLTIP ── */
+
+.wa-tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  left: auto;
+  bottom: 8px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7), 0 0 20px rgba(227, 38, 54, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.wa-tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.wa-tooltip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 6px var(--red);
+}
+
+.wa-tooltip-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #FFFFFF;
+}
+
+.wa-tooltip-subtitle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+}
+
+/* ── WHATSAPP POPUP ── */
+
+.wa-popup {
+  position: absolute;
+  bottom: calc(100% + 16px);
+  right: 0;
+  left: auto;
+  width: 326px;
+  max-width: calc(100vw - 36px);
+  background: #0E0F13;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.88), 0 0 35px rgba(37, 211, 102, 0.09);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.wa-popup-accent-bar {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #25D366 0%, var(--red) 55%, transparent 100%);
+}
+
+.wa-popup-header {
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wa-popup-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.wa-popup-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 100px;
+  color: #25D366;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.wa-popup-close-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.wa-popup-close-btn:hover {
+  background: rgba(227, 38, 54, 0.16);
+  border-color: var(--red);
+  color: #FFFFFF;
+}
+
+.wa-popup-close-btn:focus-visible {
+  border-color: var(--red);
+  color: #FFFFFF;
+}
+
+.wa-popup-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+}
+
+.wa-popup-subtitle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.wa-popup-options {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wa-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 15px;
+  background: #18191D;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  outline: none;
+}
+
+.wa-contact-card:hover {
+  background: #1F2026;
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(37, 211, 102, 0.12);
+}
+
+.wa-contact-card:focus-visible {
+  border-color: #25D366;
+  background: #1F2026;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.4);
+}
+
+.wa-contact-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease;
+}
+
+.wa-contact-card:hover .wa-contact-icon-wrap {
+  transform: scale(1.08);
+  background: #25D366;
+  color: #FFFFFF;
+}
+
+.wa-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.wa-contact-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.wa-contact-number {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.wa-contact-arrow {
+  color: var(--muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.wa-contact-card:hover .wa-contact-arrow {
+  color: #25D366;
+  transform: translate(2px, -2px);
+}
+
+.wa-popup-footer {
+  padding: 12px 18px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(8, 9, 11, 0.45);
+}
+
+.wa-popup-footer-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 6px var(--red);
+}
+
+.wa-popup-footer-text {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ── RESPONSIVE MOBILE ADJUSTMENTS ── */
+
+@media (max-width: 768px) {
+  .wa-float-container {
+    right: 16px;
+    bottom: 20px;
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    left: auto;
+  }
+
+  .wa-float-btn {
+    width: 54px;
+    height: 54px;
+  }
+
+  .wa-tooltip {
+    display: none !important;
+  }
+
+  .wa-popup {
+    width: 300px;
+    max-width: calc(100vw - 32px);
+    right: 0;
+    left: auto;
+    bottom: calc(100% + 12px);
+  }
+}
+
+/* ── PREFERS REDUCED MOTION ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-pulse-ring {
+    animation: none !important;
+    display: none !important;
+  }
+
+  .wa-float-btn,
+  .wa-contact-card,
+  .wa-contact-icon-wrap,
+  .wa-contact-arrow {
+    transition: none !important;
+  }
+}
