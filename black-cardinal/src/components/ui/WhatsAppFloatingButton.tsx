@@ -56,9 +56,9 @@ export const WHATSAPP_CONTACTS: WhatsAppContact[] = [
   {
     id: "whatsapp-2",
     label: "WhatsApp 2",
-    display: "+91 87705 57964",
-    number: "918770557964",
-    url: `https://wa.me/918770557964?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
+    display: "+91 87709 57964",
+    number: "918770957964",
+    url: `https://wa.me/918770957964?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
   },
 ];
 
@@ -239,7 +239,7 @@ export function WhatsAppFloatingButton() {
         aria-label={
           isOpen
             ? "Close WhatsApp contact options"
-            : "Open WhatsApp contact options (+91 70674 92239 or +91 87705 57964)"
+            : "Open WhatsApp contact options (+91 70674 92239 or +91 87709 57964)"
         }
         aria-expanded={isOpen}
         aria-haspopup="dialog"
