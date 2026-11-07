@@ -72,9 +72,22 @@ export function WhatsAppFloatingButton() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [currentPath, setCurrentPath] = useState(pathname);
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsFooterVisible(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
 
   // Close popup automatically on route changes during render
   if (currentPath !== pathname) {
@@ -128,7 +141,7 @@ export function WhatsAppFloatingButton() {
   return (
     <div
       ref={containerRef}
-      className="wa-float-container"
+      className={`wa-float-container${isFooterVisible ? " is-footer-visible" : ""}`}
       aria-label="WhatsApp Contact Widget"
     >
       {/* ── DESKTOP TOOLTIP ── */}

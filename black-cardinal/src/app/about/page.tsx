@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { FoundersSection } from "@/components/about/FoundersSection";
 
 export const metadata: Metadata = {
@@ -111,24 +109,6 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="about-cta-section">
-        <div className="about-cta-inner">
-          <span className="section-label">READY WHEN YOU ARE</span>
-          <h2 className="about-cta-title">
-            Let&apos;s build something{" "}
-            <span className="about-title-accent">worth noticing.</span>
-          </h2>
-          <p className="about-cta-desc">
-            Whether you need a complete brand transformation or a high-impact digital marketing strategy, we are ready to collaborate.
-          </p>
-          <Link href="/contact" className="btn-primary about-cta-btn">
-            <span>Talk to our founders &amp; team</span>
-            <ArrowUpRight size={17} strokeWidth={2.4} />
-          </Link>
         </div>
       </section>
     </>

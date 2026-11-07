@@ -8,7 +8,6 @@ import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ComparisonSection } from "@/components/home/ComparisonSection";
 import { CalculatorSection } from "@/components/home/CalculatorSection";
 import { FaqSection } from "@/components/home/FaqSection";
-import { CtaSection } from "@/components/home/CtaSection";
 
 export default function HomePage() {
   return (
@@ -23,7 +22,7 @@ export default function HomePage() {
       <ComparisonSection />
       <CalculatorSection />
       <FaqSection />
-      <CtaSection />
     </>
   );
 }
+
