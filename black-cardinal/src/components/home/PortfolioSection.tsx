@@ -26,7 +26,6 @@ const portfolioProjects: PortfolioItem[] = [
     description:
       "A complete digital marketing agency identity system, Next.js web application, and interactive client communication platform engineered from the ground up.",
     deliverables: ["Brand Identity", "Next.js Architecture", "Design System", "Interactive Tools"],
-    url: "/#home",
   },
   {
     id: "nfc-google-review-showcase",

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
 // Server Component — no hooks needed
 
 const badItems = [
@@ -59,6 +62,12 @@ export function ComparisonSection() {
           Every business is different. Results depend on many factors including
           industry, competition, budget allocation and execution quality.
         </p>
+
+        <div className="comparison-consultation">
+          <Link href="/contact#contact-form" className="btn-primary">
+            Get a real consultation <ArrowUpRight size={16} />
+          </Link>
+        </div>
       </div>
     </section>
   );

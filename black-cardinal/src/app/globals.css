@@ -2324,7 +2324,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* ================================================================
-   LOWER HALF SECTIONS — Comparison, Calculator, FAQ, CTA, Footer
+   LOWER HALF SECTIONS — Comparison, FAQ, CTA, Footer
    ================================================================ */
 
 /* ===== COMPARISON SECTION ===== */
@@ -2429,145 +2429,10 @@ h1, h2, h3, h4, h5, h6,
   text-align: center;
 }
 
-/* ===== CALCULATOR SECTION ===== */
-
-.calculator-section {
-  background: var(--background);
-  padding: 120px 5%;
-}
-
-.calculator-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.calculator-card {
-  background: var(--surface-light);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 60px 56px;
-  margin-top: 56px;
-}
-
-.calculator-inputs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-bottom: 48px;
-}
-
-.calc-field label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.calc-input-wrap {
-  display: flex;
-  align-items: center;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: var(--surface);
-}
-
-.calc-input-wrap input {
-  flex: 1;
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--white);
-  font-size: 20px;
-  font-weight: 700;
-  padding: 14px 16px;
-  min-width: 0;
-  /* remove number input arrows */
-  -moz-appearance: textfield;
-}
-
-.calc-input-wrap input::-webkit-outer-spin-button,
-.calc-input-wrap input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.calc-btn {
-  padding: 0 14px;
-  min-height: 52px;
-  background: none;
-  border: none;
-  border-left: 1px solid rgba(255,255,255,0.1);
-  color: var(--muted);
-  font-size: 20px;
-  font-weight: 400;
-  cursor: pointer;
-  transition: color 0.2s ease, background 0.2s ease;
-  line-height: 1;
-}
-
-.calc-btn:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.05);
-}
-
-.calculator-results {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 40px;
-}
-
-.results-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.result-item {
-  padding: 28px;
-  background: var(--surface);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.result-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.result-value {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--red);
-  letter-spacing: -1px;
-}
-
-.result-range {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 6px;
-  line-height: 1.5;
-}
-
-.calculator-disclaimer {
-  padding: 20px 24px;
-  border: 1px solid rgba(227,38,54,0.2);
-  background: rgba(227,38,54,0.03);
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.calculator-disclaimer strong {
-  color: var(--red);
-}
-
-.calculator-cta {
-  margin-top: 32px;
+.comparison-consultation {
   display: flex;
   justify-content: center;
+  margin-top: 32px;
 }
 
 /* ===== FAQ SECTION ===== */
@@ -2841,15 +2706,6 @@ h1, h2, h3, h4, h5, h6,
     grid-template-columns: 1fr;
   }
 
-  .calculator-inputs {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -2858,7 +2714,6 @@ h1, h2, h3, h4, h5, h6,
 
 @media (max-width: 640px) {
   .comparison-section,
-  .calculator-section,
   .faq-section,
   .cta-section {
     padding: 80px 6%;
@@ -2866,10 +2721,6 @@ h1, h2, h3, h4, h5, h6,
 
   .comparison-col {
     padding: 32px 24px;
-  }
-
-  .calculator-card {
-    padding: 36px 24px;
   }
 
   .cta-headline {
@@ -4176,173 +4027,6 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* ================================================================
-   BUSINESS STATISTICS SECTION (EXACT FIGURES: 1, 2, 1)
-   ================================================================ */
-
-.stats-section {
-  position: relative;
-  padding: 96px 0;
-  background: var(--bg-primary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-}
-
-.stats-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.stats-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 56px;
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.stats-header.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stats-header .section-label-wrap {
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.stats-title {
-  font-family: var(--font-display);
-  font-size: clamp(30px, 4.2vw, 46px);
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: -0.8px;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-
-.stats-desc {
-  font-family: var(--font-body);
-  font-size: clamp(14px, 1.15vw, 16px);
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.stat-card {
-  position: relative;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 14px;
-  padding: 38px 30px;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.stat-card.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stat-card.is-complete {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(227, 38, 54, 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65), 0 0 32px rgba(227, 38, 54, 0.12);
-}
-
-.stat-card-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--red), transparent);
-  opacity: 0.6;
-}
-
-.stat-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.stat-order {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--red);
-}
-
-.stat-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-dot.is-active {
-  background: var(--red);
-  box-shadow: 0 0 8px var(--red);
-}
-
-.stat-value-wrap {
-  margin-bottom: 14px;
-  line-height: 1;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.stat-number-val {
-  font-family: var(--font-display);
-  font-size: clamp(54px, 6.2vw, 80px);
-  font-weight: 800;
-  letter-spacing: -2px;
-  color: #FFFFFF;
-  display: inline-block;
-  line-height: 1;
-  will-change: transform, opacity, filter;
-}
-
-.stat-label {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-  letter-spacing: -0.2px;
-}
-
-.stat-card-desc {
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ================================================================
    WHY CHOOSE BLACK CARDINAL SECTION (4 STRATEGIC CARDS)
    ================================================================ */
 
@@ -4724,7 +4408,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (max-width: 860px) {
-  .stats-grid,
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -4735,10 +4418,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (max-width: 480px) {
-  .stat-card {
-    padding: 28px 20px;
-  }
-
   .why-card {
     padding: 26px 20px;
   }
@@ -4748,21 +4427,6 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-
-@media (prefers-reduced-motion: reduce) {
-  .stats-header,
-  .stat-card {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-  .stat-number-val {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-    transition: none !important;
-  }
-}
 
 /* ── CONTACT PAGE ── */
 
@@ -5597,7 +5261,6 @@ a.contact-detail-card:hover {
   .founders-section,
   .portfolio-section,
   .comparison-section,
-  .calculator-section,
   .faq-section,
   .about-story-section,
   .about-principles-section,
@@ -5636,8 +5299,6 @@ a.contact-detail-card:hover {
   .services-grid-new,
   .why-choose-grid,
   .portfolio-grid,
-  .calculator-inputs,
-  .results-grid,
   .principles-grid {
     grid-template-columns: minmax(0, 1fr);
   }

@@ -17,7 +17,6 @@ import {
   Users,
 } from "lucide-react";
 import type { Service } from "@/config/services";
-import { StatisticsSection } from "@/components/home/StatisticsSection";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -482,10 +481,6 @@ export function ServicesPageClient({ services }: ServicesPageClientProps) {
         </div>
       </section>
 
-      {/* ================================================================
-          5. BUSINESS STATISTICS (Exact Values: 1, 2, 1 with count-up)
-          ================================================================ */}
-      <StatisticsSection />
     </div>
   );
 }
