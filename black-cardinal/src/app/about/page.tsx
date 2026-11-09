@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { FoundersSection } from "@/components/about/FoundersSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us — The People Behind the Vision",
   description:
     "Meet Black Cardinal, an independent digital marketing agency founded by Krishna Gupta and Prem Gupta with a shared vision to bring strategy, design and technology together.",

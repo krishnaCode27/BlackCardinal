@@ -70,7 +70,7 @@ export function ServicesSection() {
             <span className="services-title-accent">Needs to Grow.</span>
           </h2>
           <p className="services-subtitle">
-            Simple, practical help with marketing, design, websites and getting found online.
+            SEO, social media marketing, website development, branding and Google Business Profile optimization for businesses in Morena and Gwalior.
           </p>
         </div>
 

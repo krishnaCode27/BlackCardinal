@@ -1,15 +1,94 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
 import { siteConfig } from "@/config/site";
 import { ServiceWorkerRegistration } from "@/components/pwa/ServiceWorkerRegistration";
+import { services } from "@/config/services";
+import { faqs } from "@/config/faqs";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteConfig.name,
+    url: `${siteConfig.url}/`,
+    logo: `${siteConfig.url}/images/cardinal-bird.png`,
+    image: `${siteConfig.url}/opengraph-image`,
+    description: siteConfig.description,
+    email: siteConfig.email,
+    telephone: siteConfig.phones.map(({ display }) => display),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Mahaveer Pura",
+      addressLocality: "Morena",
+      addressRegion: "Madhya Pradesh",
+      addressCountry: "IN",
+    },
+    areaServed: ["Morena", "Gwalior", "Chambal region", "India"],
+    founder: [
+      { "@type": "Person", name: "Krishna Gupta" },
+      { "@type": "Person", name: "Prem Gupta" },
+    ],
+    sameAs: [siteConfig.instagram],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Digital marketing services",
+      itemListElement: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.short,
+          areaServed: ["Morena", "Gwalior", "Chambal region", "India"],
+          provider: { "@type": "ProfessionalService", name: siteConfig.name },
+        },
+      })),
+    },
+    // TODO: Add verified business opening hours when provided.
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: `${siteConfig.url}/`,
+    logo: `${siteConfig.url}/images/cardinal-bird.png`,
+    founder: ["Krishna Gupta", "Prem Gupta"],
+    sameAs: [siteConfig.instagram],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: `${siteConfig.url}/`,
+    inLanguage: "en-IN",
+  },
+];
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  title: { default: `${siteConfig.name} — ${siteConfig.tagline}`, template: `%s | ${siteConfig.name}` },
+  metadataBase: new URL(siteConfig.url),
+  manifest: "/site.webmanifest",
+  title: { default: "Digital Marketing Agency in Morena | Black Cardinal", template: `%s | ${siteConfig.name}` },
   description: siteConfig.description,
+  robots: { index: true, follow: true },
+  other: { "google-site-verification": "TODO_REPLACE_WITH_SEARCH_CONSOLE_TOKEN" },
+  openGraph: {
+    title: "Digital Marketing Agency in Morena | Black Cardinal",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: "en_IN",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Black Cardinal — digital marketing agency in Morena" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Marketing Agency in Morena | Black Cardinal",
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -22,18 +101,51 @@ export const metadata: Metadata = {
     ],
     shortcut: "/favicon.ico",
   },
-  openGraph: { title: siteConfig.name, description: siteConfig.description, type: "website" }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        />
+        <meta name="geo.region" content="IN-MP" />
+        <meta name="geo.placename" content="Morena" />
+      </head>
       <body>
+        {structuredData.map((data, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
+          />
+        ))}
         <ServiceWorkerRegistration />
         <Header />
         <main>{children}</main>
         <Footer />
         <WhatsAppFloatingButton />
+        {process.env.NEXT_PUBLIC_GA4_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

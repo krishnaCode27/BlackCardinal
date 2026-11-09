@@ -44,9 +44,9 @@ export function HeroSection() {
             animate="show"
             custom={0.2}
           >
-            Make Your Brand
+            Digital Marketing Agency
             <br />
-            <span className="hero-headline-accent">Impossible</span> to Ignore.
+            <span className="hero-headline-accent">in Morena.</span>
           </motion.h1>
 
           <motion.p
@@ -56,9 +56,7 @@ export function HeroSection() {
             animate="show"
             custom={0.34}
           >
-            We bring strategy, creativity and technology together to help businesses
-            build a stronger digital presence, connect with their audience and grow
-            with purpose.
+            Black Cardinal is an independent, founder-run digital marketing agency in Morena, Madhya Pradesh. We bring strategy, creativity and technology together to help businesses build a stronger digital presence and grow with purpose.
           </motion.p>
 
           <motion.div

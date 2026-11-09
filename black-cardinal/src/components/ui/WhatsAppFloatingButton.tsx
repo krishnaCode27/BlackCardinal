@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
 
@@ -52,7 +53,7 @@ export const WHATSAPP_CONTACTS: WhatsAppContact[] = [
     id: "whatsapp-krishna",
     name: "Krishna Gupta",
     designation: "Co-Founder",
-    display: "+91 70674 92239",
+    display: siteConfig.phones[0].display,
     number: "917067492239",
     ctaText: "Chat with Krishna",
     url: `https://wa.me/917067492239?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
@@ -61,7 +62,7 @@ export const WHATSAPP_CONTACTS: WhatsAppContact[] = [
     id: "whatsapp-prem",
     name: "Prem Gupta",
     designation: "Co-Founder",
-    display: "+91 877 095 7964",
+    display: siteConfig.phones[1].display,
     number: "918770957964",
     ctaText: "Chat with Prem",
     url: `https://wa.me/918770957964?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,

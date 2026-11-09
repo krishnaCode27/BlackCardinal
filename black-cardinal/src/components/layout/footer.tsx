@@ -263,10 +263,10 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 text-[12.5px] text-[#25D366] hover:text-white transition-colors duration-200 mt-1"
-                  aria-label="Chat with Prem Gupta on WhatsApp (+91 877 095 7964)"
+                  aria-label="Chat with Prem Gupta on WhatsApp (+91 87709 57964)"
                 >
                   <MessageSquare size={13} className="shrink-0" />
-                  <span>+91 877 095 7964</span>
+                  <span>+91 87709 57964</span>
                   <ArrowUpRight size={12} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
@@ -283,6 +283,16 @@ export function Footer() {
               >
                 {siteConfig.email}
               </a>
+              <address className="not-italic text-[12.5px] leading-relaxed text-[#A5A5A5]">
+                {siteConfig.name}<br />
+                {siteConfig.location}<br />
+                {siteConfig.phones.map((phone, index) => (
+                  <span key={phone.href}>
+                    {index > 0 ? " · " : ""}
+                    <a href={phone.href} className="hover:text-white">{phone.display}</a>
+                  </span>
+                ))}
+              </address>
             </div>
           </motion.div>
         </div>

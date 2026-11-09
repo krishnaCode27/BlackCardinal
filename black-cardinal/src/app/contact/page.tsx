@@ -5,7 +5,8 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with Black Cardinal about your next digital project.",
+    "Contact Black Cardinal, a digital marketing agency in Morena, about SEO, social media, website development and branding.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -46,8 +47,16 @@ export default function ContactPage() {
               </a>
               <div className="contact-detail-card">
                 <span className="contact-detail-label">Based in</span>
-                <span className="contact-detail-value">{siteConfig.location}</span>
+                <address className="contact-detail-value not-italic">
+                  {siteConfig.name}<br />{siteConfig.location}
+                </address>
               </div>
+              {siteConfig.phones.map((phone) => (
+                <a key={phone.href} className="contact-detail-card" href={phone.href}>
+                  <span className="contact-detail-label">Call Black Cardinal</span>
+                  <span className="contact-detail-value">{phone.display}</span>
+                </a>
+              ))}
             </div>
           </div>
 

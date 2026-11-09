@@ -16,7 +16,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find((item) => item.slug === slug);
-  return service ? { title: service.title, description: service.short } : {};
+  return service
+    ? {
+        title: service.title,
+        description: service.short,
+        alternates: { canonical: `/services/${service.slug}` },
+      }
+    : {};
 }
 
 export default async function ServicePage({
@@ -29,7 +35,7 @@ export default async function ServicePage({
   if (!service) notFound();
 
   return (
-    <main className="service-detail-page">
+    <div className="service-detail-page">
       <section className="service-detail-hero">
         <div className="service-detail-container">
           <p className="service-detail-eyebrow">Black Cardinal / Services</p>
@@ -139,6 +145,6 @@ export default async function ServicePage({
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
