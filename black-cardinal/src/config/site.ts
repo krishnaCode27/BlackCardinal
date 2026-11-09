@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Black Cardinal",
-  tagline: "Make Your Brand Impossible to Ignore.",
-  headline: "Make Your Brand Impossible to Ignore.",
+  tagline: "Lead Without Following",
+  headline: "Lead Without Following",
   description:
-    "Black Cardinal is a digital marketing agency in Morena. SEO, social media, website development, branding & Google Business Profile to get you more leads.",
+    "Black Cardinal is a digital marketing agency in Morena, helping businesses grow through digital marketing, branding, SEO, social media marketing, and web development. Lead Without Following.",
   email: "blackcardinal004@gmail.com",
   location: "Mahaveer Pura, Morena, Madhya Pradesh, India",
   phones: [

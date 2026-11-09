@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "Black Cardinal — Digital Marketing Agency in Morena";
+export const alt = "Black Cardinal - Digital Marketing Agency Morena. Lead Without Following.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -33,7 +33,7 @@ export default async function OpenGraphImage() {
           Digital Marketing Agency in Morena
         </div>
         <div style={{ display: "flex", color: "#A5A5A5", fontSize: 28 }}>
-          Make Your Brand Impossible to Ignore.
+          Lead Without Following
         </div>
       </div>
     </div>,

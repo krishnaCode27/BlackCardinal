@@ -9,11 +9,11 @@ import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ComparisonSection } from "@/components/home/ComparisonSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { faqs } from "@/config/faqs";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Digital Marketing Agency in Morena | Black Cardinal" },
-  description:
-    "Black Cardinal is a digital marketing agency in Morena. SEO, social media, website development, branding & Google Business Profile to get you more leads.",
+  title: { absolute: "Black Cardinal - Digital Marketing Agency Morena" },
+  description: siteConfig.description,
   alternates: { canonical: "/" },
 };
 

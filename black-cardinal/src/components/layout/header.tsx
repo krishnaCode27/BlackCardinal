@@ -202,8 +202,8 @@ export function Header() {
                 <span className="text-white">BLACK</span>
                 <span className="text-[#E32636]">CARDINAL</span>
               </div>
-              <span className="font-mono text-[8px] font-semibold tracking-[1.8px] text-[#A5A5A5] uppercase leading-none">
-                DIGITAL MARKETING AGENCY
+              <span className="font-mono text-[8px] font-semibold tracking-[0.7px] text-[#A5A5A5] normal-case leading-none">
+                Lead Without Following
               </span>
             </div>
           </Link>
