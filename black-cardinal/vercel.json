@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.blackcardinal.in" }],
+      "destination": "https://blackcardinal.in/:path*",
+      "permanent": true
+    }
+  ]
+}
