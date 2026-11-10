@@ -3,8 +3,8 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { HowWeWorkSection } from "@/components/home/HowWeWorkSection";
 import { WhyChooseUsSection } from "@/components/home/WhyChooseUsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { PackagesSection } from "@/components/home/PackagesSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
-import { FoundersSection } from "@/components/about/FoundersSection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { ComparisonSection } from "@/components/home/ComparisonSection";
 import { FaqSection } from "@/components/home/FaqSection";
@@ -38,8 +38,8 @@ export default function HomePage() {
       <HowWeWorkSection />
       <WhyChooseUsSection />
       <ServicesSection />
+      <PackagesSection />
       <ProcessSection />
-      <FoundersSection />
       <PortfolioSection />
       <ComparisonSection />
       <FaqSection />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const steps = [
   {
@@ -31,8 +32,13 @@ export function ProcessSection() {
   return (
     <section className="process-section" id="process" aria-labelledby="process-heading">
       <div className="process-inner">
-        {/* Header */}
-        <div className="process-hd">
+        <motion.div
+          className="process-hd"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.65, ease: EASE }}
+        >
           <div className="section-label-wrap">
             <span className="section-label-bar" aria-hidden="true" />
             <span className="section-label">OUR PROCESS</span>
@@ -43,42 +49,41 @@ export function ProcessSection() {
           <p className="process-subtitle">
             A transparent, disciplined framework engineered around your business goals.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Steps */}
-        <div className="process-steps">
+        <motion.ol
+          className="process-steps"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {steps.map((step, i) => (
-            <motion.div
+            <motion.li
               key={step.num}
               className="process-step"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.55, ease: EASE, delay: i * 0.12 }}
+              variants={{
+                hidden: { opacity: 0, y: 34, scale: 0.97 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+              }}
+              transition={{ duration: 0.65, ease: EASE, delay: i * 0.13 }}
             >
-              {/* Connector line between steps */}
-              {i < steps.length - 1 && (
-                <div className="process-connector" aria-hidden="true" />
-              )}
-
-              {/* Step indicator dot */}
-              <div className="process-dot-wrap" aria-hidden="true">
-                <div className="process-dot" />
-              </div>
-
-              {/* Step content */}
-              <div
-                className={`process-step-body ${
-                  i % 2 === 1 ? "process-step-body--below" : ""
-                }`}
-              >
+              <div className="process-step-top">
                 <span className="process-num">{step.num}</span>
+                <span className="process-step-count">STEP {step.num} / 04</span>
+                <span className="process-step-icon" aria-hidden="true">
+                  <ArrowUpRight size={17} strokeWidth={1.8} />
+                </span>
+              </div>
+              <div className="process-step-body">
                 <h3 className="process-step-title">{step.title}</h3>
                 <p className="process-step-desc">{step.desc}</p>
               </div>
-            </motion.div>
+              <div className="process-step-track" aria-hidden="true">
+                <span style={{ width: `${((i + 1) / steps.length) * 100}%` }} />
+              </div>
+            </motion.li>
           ))}
-        </div>
+        </motion.ol>
       </div>
     </section>
   );

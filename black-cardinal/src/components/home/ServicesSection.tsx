@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   TrendingUp,
   Share2,
@@ -10,6 +10,7 @@ import {
   MapPin,
   Nfc,
   ArrowUpRight,
+  ChevronDown,
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -46,21 +47,24 @@ const SERVICE_TAGS: Record<ServiceIconKey, string[]> = {
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const cardVariant = {
-  hidden: { opacity: 0, y: 28 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: EASE, delay: i * 0.07 },
-  }),
+const headerVariant = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
 };
 
 export function ServicesSection() {
+  const reducedMotion = useReducedMotion();
+
   return (
     <section className="services-section" id="services" aria-labelledby="services-heading">
-      <div className="services-inner">
-        {/* Header */}
-        <div className="services-hd">
+      <div className="services-inner services-layout">
+        <motion.div
+          className="services-hd"
+          variants={headerVariant}
+          initial={reducedMotion ? false : "hidden"}
+          whileInView={reducedMotion ? undefined : "show"}
+          viewport={{ once: true, amount: 0.35 }}
+        >
           <div className="section-label-wrap">
             <span className="section-label-bar" aria-hidden="true" />
             <span className="section-label">WHAT WE DO</span>
@@ -72,56 +76,53 @@ export function ServicesSection() {
           <p className="services-subtitle">
             SEO, social media marketing, website development, branding and Google Business Profile optimization for businesses in Morena and Gwalior.
           </p>
-        </div>
+          <span className="services-heading-rule" aria-hidden="true" />
+        </motion.div>
 
-        {/* Services Grid */}
-        <div className="services-grid-new">
+        <section className="services-directory" aria-label="Explore our services">
           {services.map((service, i) => {
             const IconComp = SERVICE_ICONS[service.slug as ServiceIconKey] ?? TrendingUp;
             const tags = SERVICE_TAGS[service.slug as ServiceIconKey] ?? [];
             const num = String(i + 1).padStart(2, "0");
 
             return (
-              <motion.article
+              <motion.details
                 key={service.slug}
-                className="svc-card"
-                variants={cardVariant}
-                initial="hidden"
-                whileInView="show"
-                custom={i}
-                viewport={{ once: true, margin: "-60px" }}
+                className="svc-row"
+                initial={reducedMotion ? false : { opacity: 0, y: 14 }}
+                whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: reducedMotion ? 0 : 0.45, ease: EASE, delay: reducedMotion ? 0 : i * 0.055 }}
               >
-                <div className="svc-card-top">
+                <summary className="svc-summary">
                   <span className="svc-number">{num}</span>
                   <span className="svc-icon-wrap" aria-hidden="true">
-                    <IconComp size={20} strokeWidth={1.6} />
+                    <IconComp size={19} strokeWidth={1.7} />
                   </span>
+                  <span className="svc-summary-copy">
+                    <span className="svc-title">{service.title}</span>
+                    <span className="svc-desc">{service.short}</span>
+                  </span>
+                  <ChevronDown size={18} className="svc-chevron" aria-hidden="true" />
+                </summary>
+                <div className="svc-detail">
+                  <p className="svc-example"><strong>Example:</strong> {service.example}</p>
+                  <div className="svc-tags">
+                    {tags.map((tag) => <span key={tag} className="svc-tag">{tag}</span>)}
+                  </div>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="svc-link"
+                    aria-label={`Explore ${service.title}`}
+                  >
+                    <span>Explore service</span>
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </Link>
                 </div>
-
-                <h3 className="svc-title">{service.title}</h3>
-                <p className="svc-desc">{service.short}</p>
-              <p className="svc-example"><strong>Example:</strong> {service.example}</p>
-
-                <div className="svc-tags">
-                  {tags.map((tag) => (
-                    <span key={tag} className="svc-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="svc-link"
-                  aria-label={`Explore ${service.title}`}
-                >
-                  <span>Explore service</span>
-                  <ArrowUpRight size={14} className="svc-link-arrow" aria-hidden="true" />
-                </Link>
-              </motion.article>
+              </motion.details>
             );
           })}
-        </div>
+        </section>
       </div>
     </section>
   );

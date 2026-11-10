@@ -35,7 +35,7 @@ const portfolioProjects: PortfolioItem[] = [
     description:
       "Physical-to-digital contactless review touchpoints designed to reduce customer friction and strengthen local search authority for modern businesses.",
     deliverables: ["Hardware Integration", "Review Funnels", "Brand Artwork", "Local SEO"],
-    url: "/services/nfc-google-review-solutions",
+    url: "/work",
   },
   {
     id: "growth-partnership-slot",
@@ -154,6 +154,12 @@ export function PortfolioSection() {
               </div>
             </motion.article>
           ))}
+        </div>
+        <div className="portfolio-view-all-wrap">
+          <Link href="/work" className="portfolio-view-all">
+            <span>View all work</span>
+            <ArrowUpRight size={16} strokeWidth={2.2} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

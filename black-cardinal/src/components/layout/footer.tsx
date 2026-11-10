@@ -174,8 +174,10 @@ export function Footer() {
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
                 { label: "Our Services", href: "/services" },
-                { label: "Our Work", href: "/#work" },
+                { label: "Packages", href: "/#packages" },
+                { label: "Our Work", href: "/work" },
                 { label: "Contact", href: "/contact" },
+                { label: "Free SEO & Marketing Audit", href: "/free-demo" },
               ].map((item) => (
                 <Link
                   key={item.href}

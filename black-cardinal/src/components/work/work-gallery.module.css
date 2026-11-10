@@ -1,0 +1,265 @@
+.emptyState {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  text-align: center;
+}
+
+.emptyEyebrow {
+  color: #e32636;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.emptyState h2 {
+  margin: 14px 0 0;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.emptyState p {
+  margin: 10px 0 0;
+  color: #a5a5a5;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.primaryLink {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 0 22px;
+  border: 1px solid #e32636;
+  border-radius: 9px;
+  background: #e32636;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.primaryLink:hover {
+  transform: translateY(-2px);
+  background: #c91f2e;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filterButton {
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #a5a5a5;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.filterButton:hover,
+.filterButtonActive {
+  border-color: rgba(227, 38, 54, 0.55);
+  background: rgba(227, 38, 54, 0.1);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.browserBar {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #111318;
+}
+
+.browserDot,
+.browserDotRed {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #777b83;
+}
+
+.browserDotRed {
+  background: #e32636;
+}
+
+.imageButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #090a0d;
+  cursor: zoom-in;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.videoFrame {
+  width: 100%;
+  background: #090a0d;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #090a0d;
+}
+
+.cardContent {
+  padding: 19px 20px 21px;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.description,
+.result {
+  margin: 9px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.description {
+  color: #a5a5a5;
+}
+
+.result {
+  color: #ff5968;
+  font-weight: 600;
+}
+
+.dialog {
+  width: min(1100px, calc(100vw - 28px));
+  max-width: none;
+  max-height: calc(100dvh - 28px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: #08090d;
+  color: #fff;
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.84);
+  backdrop-filter: blur(5px);
+}
+
+.dialogPanel {
+  position: relative;
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  padding: 58px 18px 16px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: #17191f;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.dialogImage {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 150px);
+  object-fit: contain;
+}
+
+.dialogCaption {
+  margin: 12px 0 0;
+  color: #d0d1d5;
+  font-size: 13px;
+  text-align: center;
+}
+
+.filterButton:focus-visible,
+.imageButton:focus-visible,
+.closeButton:focus-visible,
+.primaryLink:focus-visible {
+  outline: 2px solid #ff5968;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryLink,
+  .filterButton {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}

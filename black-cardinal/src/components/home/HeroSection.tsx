@@ -76,6 +76,14 @@ export function HeroSection() {
             </Link>
           </motion.div>
 
+          <Link
+            href="/free-demo"
+            className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3.5 py-2 text-xs text-white/70 transition-colors hover:border-cyan-300/30 hover:text-cyan-200"
+          >
+            <span aria-hidden="true" className="text-cyan-300">✦</span>
+            <span>Get a <span className="font-semibold text-cyan-200">Free SEO &amp; Marketing Audit</span> — Limited Slots</span>
+          </Link>
+
           {/* Quick trust highlights in IBM Plex Mono */}
           <motion.div
             className="hero-badges-row"

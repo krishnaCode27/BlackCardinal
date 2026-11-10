@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { FoundersSection } from "@/components/about/FoundersSection";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
@@ -81,9 +80,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* ── Founders Section: Krishna Gupta & Prem Gupta ── */}
-      <FoundersSection />
 
       {/* ── Core Principles ── */}
       <section className="about-principles-section">
