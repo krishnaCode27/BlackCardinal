@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
@@ -17,6 +17,9 @@ const fadeUp = {
 };
 
 export function HeroSection() {
+  const reduceMotion = useReducedMotion();
+  const headlineWords = ["Make", "your", "brand", "impossible", "to", "ignore"];
+
   return (
     <section className="hero-section" id="home" aria-label="Black Cardinal Hero">
       {/* Background ambient elements */}
@@ -39,14 +42,38 @@ export function HeroSection() {
 
           <motion.h1
             className="hero-headline"
-            variants={fadeUp}
-            initial="hidden"
+            aria-label="Make your brand impossible to ignore"
+            initial={reduceMotion ? false : "hidden"}
             animate="show"
+            variants={fadeUp}
             custom={0.2}
           >
-            Digital Marketing Agency
-            <br />
-            <span className="hero-headline-accent">in Morena.</span>
+            <span className="hero-headline-line" aria-hidden="true">
+              {headlineWords.slice(0, 3).map((word, index) => (
+                <motion.span
+                  className="hero-headline-word"
+                  key={word}
+                  initial={reduceMotion ? false : { opacity: 0, y: 26, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: reduceMotion ? 0 : 0.65, ease: EASE, delay: reduceMotion ? 0 : 0.38 + index * 0.11 }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
+            <span className="hero-headline-line hero-headline-accent" aria-hidden="true">
+              {headlineWords.slice(3).map((word, index) => (
+                <motion.span
+                  className="hero-headline-word"
+                  key={word}
+                  initial={reduceMotion ? false : { opacity: 0, y: 26, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: reduceMotion ? 0 : 0.65, ease: EASE, delay: reduceMotion ? 0 : 0.71 + index * 0.11 }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
           </motion.h1>
 
           <motion.p
@@ -56,7 +83,7 @@ export function HeroSection() {
             animate="show"
             custom={0.34}
           >
-            Black Cardinal is an independent, founder-run digital marketing agency in Morena, Madhya Pradesh. We bring strategy, creativity and technology together to help businesses build a stronger digital presence and grow with purpose.
+            We bring strategy, creativity and technology together to help ambitious brands build a stronger digital presence and grow with purpose.
           </motion.p>
 
           <motion.div
@@ -78,10 +105,10 @@ export function HeroSection() {
 
           <Link
             href="/free-demo"
-            className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3.5 py-2 text-xs text-white/70 transition-colors hover:border-cyan-300/30 hover:text-cyan-200"
+            className="hero-audit-link"
           >
-            <span aria-hidden="true" className="text-cyan-300">✦</span>
-            <span>Get a <span className="font-semibold text-cyan-200">Free SEO &amp; Marketing Audit</span> — Limited Slots</span>
+            <span aria-hidden="true" className="hero-audit-mark">✦</span>
+            <span>Get a <strong>free SEO &amp; marketing audit</strong></span>
           </Link>
 
           {/* Quick trust highlights in IBM Plex Mono */}
