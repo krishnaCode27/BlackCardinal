@@ -54,9 +54,9 @@ export const WHATSAPP_CONTACTS: WhatsAppContact[] = [
     name: "Krishna Gupta",
     designation: "Co-Founder",
     display: siteConfig.phones[0].display,
-    number: "917067492239",
+    number: "918815806560",
     ctaText: "Chat with Krishna",
-    url: `https://wa.me/917067492239?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
+    url: `https://wa.me/918815806560?text=${encodeURIComponent(PREFILLED_MESSAGE)}`,
   },
   {
     id: "whatsapp-prem",

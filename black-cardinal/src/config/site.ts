@@ -7,7 +7,7 @@ export const siteConfig = {
   email: "blackcardinal004@gmail.com",
   location: "Mahaveer Pura, Morena, Madhya Pradesh, India",
   phones: [
-    { display: "+91 70674 92239", href: "tel:+917067492239", whatsapp: "917067492239" },
+    { display: "+91 88158 06560", href: "tel:+918815806560", whatsapp: "918815806560" },
     { display: "+91 87709 57964", href: "tel:+918770957964", whatsapp: "918770957964" },
   ],
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://blackcardinal.in",

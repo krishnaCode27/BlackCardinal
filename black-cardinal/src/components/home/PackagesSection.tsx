@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 import { packages, packagesConfig } from "@/data/packages";
 import styles from "./packages-section.module.css";
 
-const WHATSAPP_NUMBER = "917067492239";
+const WHATSAPP_NUMBER = "918815806560";
 
 function packageWhatsAppUrl(name: string, price: number) {
   const formattedPrice = price.toLocaleString("en-IN");

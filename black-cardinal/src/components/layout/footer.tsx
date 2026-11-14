@@ -242,7 +242,7 @@ export function Footer() {
                   <span className="text-[11px] text-[#A5A5A5] font-mono">Co-Founder</span>
                 </div>
                 <a
-                  href="https://wa.me/917067492239"
+                  href="https://wa.me/918815806560"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 text-[12.5px] text-[#25D366] hover:text-white transition-colors duration-200 mt-1"

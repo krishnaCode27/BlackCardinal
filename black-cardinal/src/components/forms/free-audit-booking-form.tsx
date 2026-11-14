@@ -9,7 +9,7 @@ export function FreeAuditBookingForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const number = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917067492239").replace(/\D/g, "");
+    const number = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918815806560").replace(/\D/g, "");
     const message = `Hi Black Cardinal, I would like to book my free SEO and marketing audit.\nName: ${name}\nBusiness or website: ${business}\nWhatsApp: ${whatsapp}`;
     window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   }
