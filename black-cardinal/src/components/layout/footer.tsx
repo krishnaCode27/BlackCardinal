@@ -235,21 +235,20 @@ export function Footer() {
 
             {/* Founder Contact Cards */}
             <div className="flex flex-col gap-3 w-full">
-              {/* Founder 1: Krishna Gupta */}
+              {/* Official WhatsApp contact */}
               <div className="min-h-[96px] rounded-xl p-3.5 bg-[#151518] border border-white/[0.06] flex flex-col justify-center gap-1 transition-all duration-200 hover:border-[#E32636]/40 hover:bg-[#1a1a1f]">
                 <div className="flex items-center justify-between">
-                  <span className="text-[13px] font-semibold text-white">Krishna Gupta</span>
-                  <span className="text-[11px] text-[#A5A5A5] font-mono">Co-Founder</span>
+                  <span className="text-[13px] font-semibold text-white">Official WhatsApp</span>
                 </div>
                 <a
                   href="https://wa.me/918815806560"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 text-[12.5px] text-[#25D366] hover:text-white transition-colors duration-200 mt-1"
-                  aria-label="Chat with Krishna Gupta on WhatsApp (+91 70674 92239)"
+                  aria-label="Chat with Black Cardinal on WhatsApp (+91 88158 06560)"
                 >
                   <MessageSquare size={13} className="shrink-0" />
-                  <span>+91 70674 92239</span>
+                  <span>+91 88158 06560</span>
                   <ArrowUpRight size={12} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
