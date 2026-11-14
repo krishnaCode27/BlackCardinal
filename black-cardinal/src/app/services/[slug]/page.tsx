@@ -48,6 +48,11 @@ export default async function ServicePage({
           <Link className="service-detail-cta" href="#enquiry">
             Discuss this service <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
+          {service.slug === "influencer-marketing" && (
+            <Link className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/75 transition hover:text-white" href="/influencers">
+              View creator portfolio <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
+          )}
         </div>
       </section>
 

@@ -40,6 +40,20 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "influencer-marketing",
+    title: "Influencer Marketing",
+    short: "Connect your brand with creators whose audience and content fit your goals.",
+    example: "For example, plan a creator campaign for a new product, with agreed posts and a clear way to track enquiries.",
+    intro: "We help you find suitable creators, shape a campaign that feels natural to their audience, and coordinate the content from first brief to final results.",
+    outcomes: ["Creators matched to your audience", "Clear campaign briefs and deliverables", "A record of published content and results"],
+    offerings: ["Creator research and shortlisting", "Campaign concepts and creator briefs", "Coordination of posts, reels and stories", "Campaign tracking and post-campaign reporting"],
+    process: ["Agree on your audience, goals and budget", "Review creators and select a shortlist", "Confirm deliverables and prepare the brief", "Coordinate publishing and review results"],
+    faqs: [
+      { question: "Can you guarantee reach or sales?", answer: "No. Results depend on the creator, audience, offer and platform. We agree on suitable measures and report the campaign transparently." },
+      { question: "Can I see the creators you work with?", answer: "Yes. Visit our influencer portfolio to explore creator profiles and featured work as it is added." },
+    ],
+  },
+  {
     slug: "seo",
     title: "Search Engine Optimization",
     short: "Help your website show up when people search online for what you offer.",

@@ -34,6 +34,6 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "How can I contact Black Cardinal?",
-    answer: "Email blackcardinal004@gmail.com or call +91 88158 06560 or +91 87709 57964. You can also use the enquiry form on our Contact page.",
+    answer: "Email blackcardinalbusiness@gmail.com or call +91 88158 06560 or +91 87709 57964. You can also use the enquiry form on our Contact page.",
   },
 ];

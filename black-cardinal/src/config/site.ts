@@ -3,8 +3,8 @@ export const siteConfig = {
   tagline: "Lead Without Following",
   headline: "Lead Without Following",
   description:
-    "Black Cardinal is a digital marketing agency in Morena, helping businesses grow through digital marketing, branding, SEO, social media marketing, and web development. Lead Without Following.",
-  email: "blackcardinal004@gmail.com",
+    "Black Cardinal is a digital marketing agency in Morena, helping businesses grow through influencer campaigns, digital marketing, branding, SEO, social media marketing, and web development. Lead Without Following.",
+  email: "blackcardinalbusiness@gmail.com",
   location: "Mahaveer Pura, Morena, Madhya Pradesh, India",
   phones: [
     { display: "+91 88158 06560", href: "tel:+918815806560", whatsapp: "918815806560" },

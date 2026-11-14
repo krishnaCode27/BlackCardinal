@@ -9,6 +9,7 @@ import {
   Palette,
   MapPin,
   Nfc,
+  Megaphone,
   ArrowUpRight,
   ChevronDown,
   type LucideIcon,
@@ -19,6 +20,7 @@ import { services } from "@/config/services";
 type ServiceIconKey =
   | "digital-marketing"
   | "social-media-marketing"
+  | "influencer-marketing"
   | "seo"
   | "website-development"
   | "branding-graphic-design"
@@ -28,6 +30,7 @@ type ServiceIconKey =
 const SERVICE_ICONS: Record<ServiceIconKey, LucideIcon> = {
   "digital-marketing": TrendingUp,
   "social-media-marketing": Share2,
+  "influencer-marketing": Megaphone,
   seo: Search,
   "website-development": Monitor,
   "branding-graphic-design": Palette,
@@ -38,6 +41,7 @@ const SERVICE_ICONS: Record<ServiceIconKey, LucideIcon> = {
 const SERVICE_TAGS: Record<ServiceIconKey, string[]> = {
   "digital-marketing": ["Strategy", "Campaigns", "Analytics"],
   "social-media-marketing": ["Instagram", "Facebook", "Content"],
+  "influencer-marketing": ["Creators", "Campaigns", "Partnerships"],
   seo: ["On-page SEO", "Technical", "Local SEO"],
   "website-development": ["Web Design", "Development", "Performance"],
   "branding-graphic-design": ["Brand Identity", "Logo", "Creatives"],
@@ -74,7 +78,7 @@ export function ServicesSection() {
             <span className="services-title-accent">Needs to Grow.</span>
           </h2>
           <p className="services-subtitle">
-            SEO, social media marketing, website development, branding and Google Business Profile optimization for businesses in Morena and Gwalior.
+            Influencer campaigns, SEO, social media marketing, website development, branding and local search support for businesses in Morena and Gwalior.
           </p>
           <span className="services-heading-rule" aria-hidden="true" />
         </motion.div>

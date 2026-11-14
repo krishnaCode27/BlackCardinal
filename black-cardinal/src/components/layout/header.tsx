@@ -30,30 +30,36 @@ const SERVICES_LIST: ServiceItem[] = [
   },
   {
     num: "03",
+    title: "Influencer Marketing",
+    slug: "influencer-marketing",
+    shortDesc: "Creator partnerships and campaign coordination",
+  },
+  {
+    num: "04",
     title: "SEO",
     slug: "seo",
     shortDesc: "Technical optimization & organic search visibility",
   },
   {
-    num: "04",
+    num: "05",
     title: "Website Development",
     slug: "website-development",
     shortDesc: "High-performance, modern conversion-focused sites",
   },
   {
-    num: "05",
+    num: "06",
     title: "Branding & Graphic Design",
     slug: "branding-graphic-design",
     shortDesc: "Visual identity systems, logos & creative assets",
   },
   {
-    num: "06",
+    num: "07",
     title: "Google Business Profile",
     slug: "google-business-profile",
     shortDesc: "Local presence, map ranking & business optimization",
   },
   {
-    num: "07",
+    num: "08",
     title: "NFC Google Review Solutions",
     slug: "nfc-google-review-solutions",
     shortDesc: "Frictionless customer review touchpoints & cards",
@@ -100,6 +106,7 @@ export function Header() {
   const isAbout = pathname === "/about";
   const isServices = pathname.startsWith("/services");
   const isWork = pathname === "/work";
+  const isInfluencers = pathname === "/influencers";
   const isContact = pathname === "/contact";
   const isFreeAudit = pathname === "/free-demo";
 
@@ -374,6 +381,16 @@ export function Header() {
               Our Work
             </Link>
 
+            <Link
+              href="/influencers"
+              className={cn(
+                "text-[14px] font-medium tracking-[0.2px] transition-colors duration-200 outline-none hover:text-[#E32636]",
+                isInfluencers ? "text-white" : "text-[#A5A5A5]"
+              )}
+            >
+              Influencers
+            </Link>
+
             {/* Contact */}
             <Link
               href="/contact"
@@ -584,19 +601,34 @@ export function Header() {
                   {isWork && <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />}
                 </Link>
 
-                {/* 05 Packages */}
+                <Link
+                  href="/influencers"
+                  className={cn(
+                    "flex items-center justify-between py-3.5 text-xl font-bold transition-colors duration-200 border-0 outline-none",
+                    isInfluencers ? "text-white" : "text-[#A5A5A5] hover:text-white"
+                  )}
+                  onClick={closeAll}
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-xs font-bold text-[#E32636]">05</span>
+                    <span>Influencer Portfolio</span>
+                  </div>
+                  {isInfluencers && <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />}
+                </Link>
+
+                {/* 06 Packages */}
                 <Link
                   href="/#packages"
                   className="flex items-center justify-between py-3.5 text-xl font-bold text-[#A5A5A5] transition-colors duration-200 hover:text-white border-0 outline-none"
                   onClick={closeAll}
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs font-bold text-[#E32636]">05</span>
+                    <span className="font-mono text-xs font-bold text-[#E32636]">06</span>
                     <span>Packages</span>
                   </div>
                 </Link>
 
-                {/* 06 Contact */}
+                {/* 07 Contact */}
                 <Link
                   href="/contact"
                   className={cn(
@@ -607,7 +639,7 @@ export function Header() {
                 >
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-xs font-bold text-[#E32636]">
-                      06
+                      07
                     </span>
                     <span>Contact</span>
                   </div>
@@ -624,7 +656,7 @@ export function Header() {
                   onClick={closeAll}
                 >
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs font-bold text-[#E32636]">07</span>
+                    <span className="font-mono text-xs font-bold text-[#E32636]">08</span>
                     <span>Free SEO &amp; Marketing Audit</span>
                   </div>
                   {isFreeAudit && <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />}
