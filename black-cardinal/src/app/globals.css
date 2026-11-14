@@ -4699,57 +4699,6 @@ h1, h2, h3, h4, h5, h6,
   outline-offset: 3px;
 }
 
-.free-audit-cta {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  animation: free-audit-cta-glow 2.8s ease-in-out infinite;
-}
-
-.free-audit-cta::before {
-  position: absolute;
-  z-index: 0;
-  top: -60%;
-  bottom: -60%;
-  left: -35%;
-  width: 28%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
-  content: "";
-  pointer-events: none;
-  transform: translateX(-220%) skewX(-18deg);
-  animation: free-audit-cta-shine 4.2s ease-in-out infinite;
-}
-
-.free-audit-cta > span {
-  position: relative;
-  z-index: 1;
-}
-
-.free-audit-cta:focus-visible {
-  outline: 3px solid #a5f3fc;
-  outline-offset: 4px;
-}
-
-@keyframes free-audit-cta-glow {
-  0%,
-  100% { box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2); }
-  50% { box-shadow: 0 10px 36px rgba(34, 211, 238, 0.43); }
-}
-
-@keyframes free-audit-cta-shine {
-  0%,
-  18% { transform: translateX(-220%) skewX(-18deg); }
-  55%,
-  100% { transform: translateX(520%) skewX(-18deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .free-audit-cta,
-  .free-audit-cta::before {
-    animation: none;
-  }
-}
-
 /* ================================================================
    UPDATED WHATSAPP FOUNDER CARDS STYLES
    ================================================================ */

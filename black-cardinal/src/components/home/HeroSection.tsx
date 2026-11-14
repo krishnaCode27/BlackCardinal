@@ -103,14 +103,6 @@ export function HeroSection() {
             </Link>
           </motion.div>
 
-          <Link
-            href="/free-demo"
-            className="hero-audit-link"
-          >
-            <span aria-hidden="true" className="hero-audit-mark">✦</span>
-            <span>Get a <strong>free SEO &amp; marketing audit</strong></span>
-          </Link>
-
           {/* Quick trust highlights in IBM Plex Mono */}
           <motion.div
             className="hero-badges-row"

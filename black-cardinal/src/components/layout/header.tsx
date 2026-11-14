@@ -106,9 +106,7 @@ export function Header() {
   const isAbout = pathname === "/about";
   const isServices = pathname.startsWith("/services");
   const isWork = pathname === "/work";
-  const isInfluencers = pathname === "/influencers";
   const isContact = pathname === "/contact";
-  const isFreeAudit = pathname === "/free-demo";
 
   // Track scroll position
   useEffect(() => {
@@ -362,14 +360,6 @@ export function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Packages */}
-            <Link
-              href="/#packages"
-              className="text-[14px] font-medium tracking-[0.2px] text-[#A5A5A5] transition-colors duration-200 outline-none hover:text-[#E32636]"
-            >
-              Packages
-            </Link>
-
             {/* Our Work */}
             <Link
               href="/work"
@@ -379,16 +369,6 @@ export function Header() {
               )}
             >
               Our Work
-            </Link>
-
-            <Link
-              href="/influencers"
-              className={cn(
-                "text-[14px] font-medium tracking-[0.2px] transition-colors duration-200 outline-none hover:text-[#E32636]",
-                isInfluencers ? "text-white" : "text-[#A5A5A5]"
-              )}
-            >
-              Influencers
             </Link>
 
             {/* Contact */}
@@ -406,16 +386,6 @@ export function Header() {
                   aria-hidden="true"
                 />
               )}
-            </Link>
-            <Link
-              href="/free-demo"
-              className={cn(
-                "relative text-[14px] font-medium tracking-[0.2px] transition-colors duration-200 outline-none hover:text-[#E32636]",
-                isFreeAudit ? "text-white" : "text-[#A5A5A5]"
-              )}
-            >
-              <span>Free SEO &amp; Marketing Audit</span>
-              {isFreeAudit && <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#E32636]" aria-hidden="true" />}
             </Link>
           </nav>
 
@@ -601,34 +571,7 @@ export function Header() {
                   {isWork && <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />}
                 </Link>
 
-                <Link
-                  href="/influencers"
-                  className={cn(
-                    "flex items-center justify-between py-3.5 text-xl font-bold transition-colors duration-200 border-0 outline-none",
-                    isInfluencers ? "text-white" : "text-[#A5A5A5] hover:text-white"
-                  )}
-                  onClick={closeAll}
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs font-bold text-[#E32636]">05</span>
-                    <span>Influencer Portfolio</span>
-                  </div>
-                  {isInfluencers && <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />}
-                </Link>
-
-                {/* 06 Packages */}
-                <Link
-                  href="/#packages"
-                  className="flex items-center justify-between py-3.5 text-xl font-bold text-[#A5A5A5] transition-colors duration-200 hover:text-white border-0 outline-none"
-                  onClick={closeAll}
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs font-bold text-[#E32636]">06</span>
-                    <span>Packages</span>
-                  </div>
-                </Link>
-
-                {/* 07 Contact */}
+                {/* 05 Contact */}
                 <Link
                   href="/contact"
                   className={cn(
@@ -639,27 +582,13 @@ export function Header() {
                 >
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-xs font-bold text-[#E32636]">
-                      07
+                      05
                     </span>
                     <span>Contact</span>
                   </div>
                   {isContact && (
                     <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />
                   )}
-                </Link>
-                <Link
-                  href="/free-demo"
-                  className={cn(
-                    "flex items-center justify-between py-3.5 text-xl font-bold transition-colors duration-200 border-0 outline-none",
-                    isFreeAudit ? "text-white" : "text-[#A5A5A5] hover:text-white"
-                  )}
-                  onClick={closeAll}
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs font-bold text-[#E32636]">08</span>
-                    <span>Free SEO &amp; Marketing Audit</span>
-                  </div>
-                  {isFreeAudit && <span className="w-1.5 h-1.5 rounded-full bg-[#E32636]" />}
                 </Link>
               </nav>
 
